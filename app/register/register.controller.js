@@ -11,7 +11,6 @@ angular.module('orledor')
 				$scope.$apply();
 			});
 
-
 		$scope.register = function (ev) {
 			return ensureRegister()
 				.catch(function (err) {
