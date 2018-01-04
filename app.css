@@ -63,6 +63,27 @@
 
 
 
+.researcher-home-page md-card-title md-card-title-text h1
+{
+    color:#008B8B;
+    font-family:'Helvetica Neue',sans-serif;
+    font-size:100px;
+    font-weight:bold;
+    letter-spacing:-1px;
+    line-height:1;
+    text-align:center
+}
+
+.researcher-home-page md-card-content p
+{
+    font-size: 30px;
+    color:#008B8B;
+    line-height:30px;
+    text-align:center
+}
+
+
+
 .media-suggestion 
 .media-info
 {

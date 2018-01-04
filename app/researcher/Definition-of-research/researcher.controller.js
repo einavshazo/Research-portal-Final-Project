@@ -43,18 +43,15 @@ angular.module('orledor')
 
 					return $q.reject();
 				})
+				.then(function() {
+					return firebase.child("users").child($scope.user.userResearcher).once("value");
+				})
 		}
 
-	/*	function routeUser(user) {
-			var state = 'home';
-			if (user._isAdmin) {
-				state = 'manage-links';
-			}
-
-			$state.go(state);
-		}*/
-
 		function ensureResearcher() {
+			if(!$scope.user._userResearcher) {
+				return $q.reject('נא למלא שם מחקר');
+			}
 			if(!$scope.user._ages) {
 				return $q.reject('נא לבחור קבוצת גיל');
 			}
