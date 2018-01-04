@@ -1,35 +1,36 @@
-<div layout="column" layout-align="center center">
-	<md-card layout="column" layout-padding>
+<md-card class="home-page-researcher" dir="rtl">    
+	<div layout="column" layout-align="center center">
+		<md-card layout="column" layout-padding>
 
-					<p style="text-align:center">הגדרת מחקר</p>
+			<p style="text-align:center">הגדרת מחקר</p>
 					
-					<md-input-container>
-							<md-select ng-model="user._ages" placeholder="קבוצת גיל">
-									<md-option ng-value="age" ng-repeat="age in ages">{{ age }}</md-option>
-						</md-select>
-					</md-input-container>
+			<md-input-container>
+				<md-select ng-model="user._ages" placeholder="קבוצת גיל">
+					<md-option ng-value="age" ng-repeat="age in ages">{{ age }}</md-option>
+				</md-select>
+			</md-input-container>
 
-					<md-input-container>
-						<md-select ng-model="user._language" placeholder="שפות מדוברות" multiple="true">
-							<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
-						</md-select>
-					</md-input-container>
+			<md-input-container>
+				<md-select ng-model="user._language" placeholder="שפות מדוברות" multiple="true">
+					<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
+				</md-select>
+			</md-input-container>
 
-					
-					<md-input-container>
-							<md-select ng-model="user._musicStyle" placeholder="סגנון מוסיקה" multiple="true">
-								<md-option ng-value="mStyle" ng-repeat="mStyle in musicStyle">{{ mStyle }}</md-option>
-							</md-select>
-						</md-input-container>
+				
+			<md-input-container>
+				<md-select ng-model="user._musicStyle" placeholder="סגנון מוסיקה" multiple="true">
+					<md-option ng-value="mStyle" ng-repeat="mStyle in musicStyle">{{ mStyle }}</md-option>
+				</md-select>
+			</md-input-container>
 
 
-						<md-input-container>
-								<md-select ng-model="user._countries" placeholder="ארץ לידה" >
-									<md-option ng-value="country" ng-repeat="country in countries">{{ country }}</md-option>
-								</md-select>
-							</md-input-container>
+			<md-input-container>
+				<md-select ng-model="user._countries" placeholder="ארץ לידה" >
+					<md-option ng-value="country" ng-repeat="country in countries">{{ country }}</md-option>
+				</md-select>
+			</md-input-container>
 
-	      <md-button class="md-primary" ng-click="researcher($event)">הגדר מחקר</md-button>
-				<a ui-sref="register">עוד לא רשום? הירשם!</a>
-	</md-card>
-</div>
+	    	<md-button class="md-primary" ng-click="researcher($event)">הגדר מחקר</md-button>
+		</md-card>
+	</div>
+</md-card>

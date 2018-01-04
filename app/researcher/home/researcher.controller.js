@@ -1,5 +1,6 @@
 angular.module('orledor')
-	.controller('researcherController', function($scope, $state, $mdDialog, $q, firebase, loggedUser, languages, countries) {
+	.controller('researcherController', function($scope, $state, $mdDialog, $q, firebase, loggedUser, languages, 
+										countries, ages) {
 
 		
 		$scope.user = {};
@@ -8,12 +9,12 @@ angular.module('orledor')
 		.then(function (res) {
 			$scope.languages = res;
 
-			$scope.ages = [
+		/*	$scope.ages = [
 				"בני 60",
 				"בני 70",
 				"בני 80",
 				"בני 90 ומעלה"
-			];
+			];*/
 
 			$scope.musicStyle = [
 				"פופ",
@@ -22,6 +23,11 @@ angular.module('orledor')
 				"ים תכוני"
 			];
 
+		})
+
+		ages
+		.then(function (res) {
+			$scope.ages = res;
 		})
 
 		countries
