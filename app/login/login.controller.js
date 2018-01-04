@@ -46,6 +46,9 @@ angular.module('orledor')
 			if (user._isAdmin) {
 				state = 'manage-links';
 			}
+			else if (user._isResearcher) {
+				state = 'researcher';
+			}
 
 			$state.go(state);
 		}

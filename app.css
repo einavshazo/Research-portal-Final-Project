@@ -29,6 +29,19 @@
     transform:scale(1.1)
 }
 
+.researcher-shell-menu a
+{
+    color:white;
+    margin:0 10px 0 10px;
+    text-decoration:blink;
+    transition:transform 1s
+}
+
+.researcher-shell-menu a:hover
+{
+    transform:scale(1.1)
+}
+
 .home-page md-card-title md-card-title-text h1
 {
     color:#008B8B;
@@ -48,24 +61,6 @@
     text-align:center
 }
 
-.home-page-researcher md-card-title md-card-title-text h1
-{
-    color:#008B8B;
-    font-family:'Helvetica Neue',sans-serif;
-    font-size:100px;
-    font-weight:bold;
-    letter-spacing:-1px;
-    line-height:1;
-    text-align:center
-}
-
-.home-page-researcher md-card-content p
-{
-    font-size: 30px;
-    color:#008B8B;
-    line-height:30px;
-    text-align:center
-}
 
 
 .media-suggestion 

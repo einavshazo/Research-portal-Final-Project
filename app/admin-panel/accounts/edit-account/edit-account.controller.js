@@ -17,6 +17,14 @@ angular.module('orledor').controller('editAccountController', function($scope, $
         initIsAdminWatch = true;       
     });
 
+    var initIsResearcherWatch = false;
+    $scope.$watch('account._isResearcher', function () {
+        if(initIsResearcherWatch) {
+            $mdToast.show($mdToast.simple().textContent('שים לב! הפיכת משתמש לחוקר תיתן לאותו המשתש הרשאות על המערכת!'));
+        } 
+        initIsResearcherWatch = true;       
+    });
+
     $scope.save = function() {
         return validateUser()
             .then(function() {

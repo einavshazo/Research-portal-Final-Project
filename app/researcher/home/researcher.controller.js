@@ -31,7 +31,6 @@ angular.module('orledor')
 
 
 
-
 		$scope.researcher = function(ev) {
 			return ensureResearcher()
 				.catch(function (err) {
@@ -46,14 +45,14 @@ angular.module('orledor')
 				})
 		}
 
-		function routeUser(user) {
+	/*	function routeUser(user) {
 			var state = 'home';
 			if (user._isAdmin) {
 				state = 'manage-links';
 			}
 
 			$state.go(state);
-		}
+		}*/
 
 		function ensureResearcher() {
 			if(!$scope.user._ages) {
