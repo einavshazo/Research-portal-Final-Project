@@ -44,12 +44,14 @@ angular.module('orledor')
 					return $q.reject();
 				})
 				.then(function() {
-					return firebase.child("users").child($scope.user.userResearcher).once("value");
+					return firebase.child('researches').child($scope.user._researchName).set($scope.user);										
+
+					//return firebase.child("researches").child($scope.user._userResearcher).once("value");
 				})
 		}
 
-		function ensureResearcher() {
-			if(!$scope.user._userResearcher) {
+	//	function ensureResearcher() {
+			/*if(!$scope.user._userResearcher) {
 				return $q.reject('נא למלא שם מחקר');
 			}
 			if(!$scope.user._ages) {
@@ -66,8 +68,8 @@ angular.module('orledor')
 
 			if(!$scope.user._countries) {
 				return $q.reject('נא לבחור ארץ לידה');
-			}
+			}*/
 
-			return $q.resolve();
-		}
+		//	return $q.resolve();
+	//	}
 	});
