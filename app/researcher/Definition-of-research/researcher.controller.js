@@ -73,4 +73,4 @@ angular.module('orledor')
 
 		//	return $q.resolve();
 	//	}
-	});
+});
