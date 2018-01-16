@@ -1,6 +1,6 @@
 angular.module('orledor')
 	.controller('researcherController', function($scope, $state, $mdDialog, $q, firebase, loggedUser, languages, 
-										countries, ages, musicStyle) {
+										countries, sampleGroups, musicStyle) {
 
 		
 		$scope.user = {};
@@ -10,9 +10,9 @@ angular.module('orledor')
 			$scope.languages = res;
 		})
 
-		ages
+		sampleGroups
 		.then(function (res) {
-			$scope.ages = res;
+			$scope.sampleGroups = res;
 		})
 
 		musicStyle
@@ -24,6 +24,7 @@ angular.module('orledor')
 		.then(function (res) {
 			$scope.countries = res;
 		})
+
 		
 		.then(function () {
 			$scope.$apply();
