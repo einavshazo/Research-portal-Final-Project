@@ -1,4 +1,4 @@
-angular.module('orledor').controller('userListController', function($scope, $mdDialog, firebase) {
+angular.module('orledor').controller('userListController', function($scope, $mdDialog, firebase, loggedUser) {
 
     loadAllUsers();
 

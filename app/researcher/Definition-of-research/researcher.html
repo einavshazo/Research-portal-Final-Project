@@ -6,58 +6,58 @@
 
 			<md-input-container>
 				<label>שם המחקר</label>
-				<input ng-model="user._researchName">
+				<input ng-model="research._researchName">
 			</md-input-container>
 
 			<md-input-container>
 				<label>משתתפי המחקר</label>
-				<input ng-model="user._rearchParticipate">
+				<input ng-model="research._rearchParticipate">
 			</md-input-container>
 
 			<md-input-container>
 				<label>אופן מהלך המחקר</label>
-				<input ng-model="user._researchProcess">
+				<input ng-model="research._researchProcess">
 			</md-input-container>
 
 			<md-input-container>
 				<label>משתני המחקר</label>
-				<input ng-model="user._ResearchVariables">
+				<input ng-model="research._ResearchVariables">
 			</md-input-container>
 
-			<md-input-container>
-				<label>התערבות</label>
-				<input ng-model="user._intervention">
-			</md-input-container>
-
-			<md-datepicker ng-model="selectedStartDate" md-placeholder="תחילת המחקר"></md-datepicker>
-
-			<md-datepicker ng-model="selectedEndDate" md-placeholder="סיום המחקר"></md-datepicker>
+			<label>התערבות</label>
 			
 			<md-input-container>
-				<md-select ng-model="user._sampleGroup" placeholder="קבוצת מדגם">
-					<md-option ng-value="sampleGroup" ng-repeat="sampleGroup in sampleGroups">{{ sampleGroup }}</md-option>
-				</md-select>
-			</md-input-container>
-
-		<!--	<md-input-container>
-				<md-select ng-model="user._language" placeholder="שפות מדוברות" multiple="true">
+				<md-select ng-model="research._language" placeholder="שפות מדוברות" multiple="true">
 					<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
 				</md-select>
 			</md-input-container>
 
 				
 			<md-input-container>
-				<md-select ng-model="user._musicStyle" placeholder="סגנון מוסיקה" multiple="true">
+				<md-select ng-model="research._musicStyle" placeholder="סגנון מוסיקה" multiple="true">
 					<md-option ng-value="mStyle" ng-repeat="mStyle in musicStyle">{{ mStyle }}</md-option>
 				</md-select>
 			</md-input-container>
 
 
 			<md-input-container>
-				<md-select ng-model="user._countries" placeholder="ארץ לידה" >
+				<md-select ng-model="research._countries" placeholder="ארץ לידה" >
 					<md-option ng-value="country" ng-repeat="country in countries">{{ country }}</md-option>
 				</md-select>
-			</md-input-container>  -->
+			</md-input-container> 
+
+			<md-datepicker ng-model="selectedStartDate" md-placeholder="תחילת המחקר"></md-datepicker>
+
+			<md-datepicker ng-model="selectedEndDate" md-placeholder="סיום המחקר"></md-datepicker>
+			
+			<md-input-container>
+				<md-select ng-model="research._sampleGroup" placeholder="קבוצת מדגם">
+					<md-option ng-value="sampleGroup" ng-repeat="sampleGroup in sampleGroups">{{ sampleGroup }}</md-option>
+				</md-select>
+			</md-input-container>
+
+
+
 
 			<md-button class="md-primary" ng-click="researcher($event)">הגדר מחקר</md-button>
 		</md-card>
