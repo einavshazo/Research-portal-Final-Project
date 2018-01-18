@@ -2,25 +2,7 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
 
     loadAllUsers();
 
- /*   $scope.editAccount = function(user, ev) {
-        return $mdDialog.show({
-            controller: 'userListController',
-            templateUrl: 'app/researcher/user-list/user-list.html',
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            locals: {
-            	user: user
-            }
-        })
-        .then(function (user) {
-        	return firebase.child('users')
-				.child(user._userName)
-				.update(user);
-        })
-        .then(function () {
-        	return loadAllUsers();
-        });
-    };*/
+
 
 
     function loadAllUsers() {

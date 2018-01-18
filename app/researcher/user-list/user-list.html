@@ -6,7 +6,7 @@
         </md-input-container>
     </div>
     <md-list>
-        <md-list-item class="md-3-line" ng-click="editAccount(user, $event)" ng-repeat="user in allUsers | filter: filterType">
+        <md-list-item class="md-3-line" ng-click="addUserToArry(user, $event)" ng-repeat="user in allUsers | filter: filterType">
           <div class="md-list-item-text " layout="row">				  	
                   <div layout="column ">	  	
                       <h2>{{ user._firstName }}</h2>		    	

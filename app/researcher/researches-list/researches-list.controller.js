@@ -14,4 +14,5 @@ angular.module('orledor').controller('researchesListController', function($scope
                 $scope.$apply();
             });
     };
+
 });

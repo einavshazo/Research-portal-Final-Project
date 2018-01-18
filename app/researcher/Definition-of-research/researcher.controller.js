@@ -58,6 +58,46 @@ angular.module('orledor')
 				});
 		}
 
+		$scope.allUsers = function(user, ev) {
+			return $mdDialog.show({
+				controller: 'userListController',
+				templateUrl: 'app/researcher/user-list/user-list.html',
+				targetEvent: ev,
+				clickOutsideToClose: true,
+				locals: {
+					user: user
+				}
+			})
+			.then(function (user) {
+				return firebase.child('users')
+					.child(user._userName)
+					.update(user);
+			})
+			.then(function () {
+				return loadAllUsers();
+			});
+		}
+
+		$scope.register = function(account, ev) {
+			return $mdDialog.show({
+				controller: 'registerController',
+				templateUrl: 'app/register/register.html',
+				targetEvent: ev,
+				clickOutsideToClose: true,
+				locals: {
+					account: account
+				}
+			})
+			/*.then(function (user) {
+				return firebase.child('users')
+					.child(user._userName)
+					.update(user);
+			})
+			.then(function () {
+				return loadAllUsers();
+			});*/
+		};
+
 		function ensureResearcher() {
 			if(!$scope.research._researchName) {
 				return $q.reject('נא למלא שם מחקר');
@@ -85,9 +125,6 @@ angular.module('orledor')
 			}
 			if(!$scope.selectedEndDate) {
 				return $q.reject('נא לבחור תאריך סיום');
-			}
-			if(!$scope.research._sampleGroup) {
-				return $q.reject('נא לבחור קבוצת מדגם');
 			}
 
 			return $q.resolve();
