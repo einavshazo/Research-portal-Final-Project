@@ -25,6 +25,7 @@ angular.module('orledor').controller('editAccountController', function($scope, $
         initIsResearcherWatch = true;       
     });
 
+
     $scope.save = function() {
         return validateUser()
             .then(function() {

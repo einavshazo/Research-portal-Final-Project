@@ -50,6 +50,7 @@ angular.module('orledor')
 				state = 'researcher-home';
 			}
 
+
 			$state.go(state);
 		}
 

@@ -17,7 +17,8 @@ public class User {
     private List<String> _language;
     private List<BaseMultimedia> _userMultimedia;
     private boolean _isAdmin;
-    private boolean _isResearcher;    
+    private boolean _isResearcher; 
+    private boolean _isResearchParticipant;       
 	private HashMap likes;
 
     public User() {
@@ -96,6 +97,14 @@ public class User {
 
     public void set_isResearcher(boolean _isResearcher) {
         this._isResearcher = _isResearcher;
+    }
+    
+    public boolean is_isResearchParticipant() {
+        return _isResearchParticipant;
+    }
+
+    public void set_isResearchParticipant(boolean _isResearchParticipant) {
+        this._isResearchParticipant = _isResearchParticipant;
     }
 	
 	public HashMap getLikes() {

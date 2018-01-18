@@ -9,13 +9,15 @@
         <md-list-item class="md-3-line" ng-click="addUserToArry(user, $event)" ng-repeat="user in allUsers | filter: filterType">
           <div class="md-list-item-text " layout="row">				  	
                   <div layout="column ">	  	
-                      <h2>{{ user._firstName }}</h2>		    	
+                    <h2>{{ user._firstName }}</h2>		    	
                     <p>תאריך לידה: {{ user._birthDate | date }}</p>
                     <span ng-if="user._isAdmin">מנהל</span>
                     <span ng-if="user._isResearcher">חוקר</span>
-                  </div>		
+                    <md-checkbox ng-model="user._isResearchParticipant">הוסף למחקר</md-checkbox>
+                </div>		
           </div>
           <md-divider ></md-divider>
         </md-list-item>	
     </md-list>
+    <md-button class="md-raised md-primary" ng-click="save()">שמור</md-button>
 </md-card>
