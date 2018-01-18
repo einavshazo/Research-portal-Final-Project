@@ -12,6 +12,7 @@ public class Researches {
     private String _researchName;
     private String _rearchParticipate;
     private String _researchProcess;
+    private String _researchVariables;
     private List<String> _language;
     private List<String> _musicStyle;
     private String _countries;
@@ -42,6 +43,14 @@ public class Researches {
 
     public void set_researchProcess(String _researchProcess) {
         this._researchProcess = _researchProcess;
+    }
+
+    public String get_researchVariables() {
+        return _researchVariables;
+    }
+
+    public void set_researchVariables(String _researchVariables) {
+        this._researchVariables = _researchVariables;
     }
 
     public List<String> get_language() {

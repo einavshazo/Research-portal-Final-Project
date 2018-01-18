@@ -14,6 +14,7 @@ public class SaveNewResearchesLogic {
     public boolean SaveNewResearche(String researchName,
                           String rearchParticipate,
                           String researchProcess,
+                          String researchVariables,
                           List<String> languages,
                           List<String> musicStyle,
                           String countries,
@@ -26,6 +27,7 @@ public class SaveNewResearchesLogic {
         newResearch.set_researchName(researchName);
         newResearch.set_rearchParticipate(rearchParticipate);
         newResearch.set_researchProcess(researchProcess);
+        newResearch.set_ResearchVariables(researchVariables);
         newResearch.set_languages(languages);
         newResearch.set_musicStyle(musicStyle);
         newResearch.set_countries(countries);

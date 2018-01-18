@@ -2,14 +2,14 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
 
     loadAllUsers();
 
-   /* $scope.editAccount = function(account, ev) {
+ /*   $scope.editAccount = function(user, ev) {
         return $mdDialog.show({
-            controller: 'editAccountController',
-            templateUrl: 'app/admin-panel/accounts/edit-account/edit-account.html',
+            controller: 'userListController',
+            templateUrl: 'app/researcher/user-list/user-list.html',
             targetEvent: ev,
             clickOutsideToClose: true,
             locals: {
-            	account: account
+            	user: user
             }
         })
         .then(function (user) {
@@ -21,6 +21,7 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
         	return loadAllUsers();
         });
     };*/
+
 
     function loadAllUsers() {
         $scope.allUsers = [];

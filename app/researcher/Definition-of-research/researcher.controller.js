@@ -30,7 +30,6 @@ angular.module('orledor')
 		});
 
 
-
 		$scope.researcher = function(ev) {
 			return ensureResearcher()
 				.catch(function (err) {
@@ -45,11 +44,14 @@ angular.module('orledor')
 				})
 				.then(function() {
 
+					$scope.research._startDate = $scope.selectedStartDate.toISOString();
+					$scope.research._endDate = $scope.selectedEndDate.toISOString();
+	
 					return firebase.child('researches').child($scope.research._researchName).set($scope.research);
 				})
 				.then(function () {
 					loggedResearch.setResearch($scope.research);
-					$state.go('user-list');
+					$state.go('researches-list');
 				})
 				.catch(function (err) {
 					console.log(err);
@@ -57,24 +59,36 @@ angular.module('orledor')
 		}
 
 		function ensureResearcher() {
-			/*if(!$scope.user._userResearcher) {
+			if(!$scope.research._researchName) {
 				return $q.reject('נא למלא שם מחקר');
 			}
-			if(!$scope.user._ages) {
-				return $q.reject('נא לבחור קבוצת גיל');
+			if(!$scope.research._rearchParticipate) {
+				return $q.reject('נא למלא משתתפי מחקר');
 			}
-
-			if(!$scope.user._language) {
+			if(!$scope.research._researchProcess) {
+				return $q.reject('נא למלא הליך מחקר');
+			}
+			if(!$scope.research._researchVariables) {
+				return $q.reject('נא למלא משתני מחקר');
+			}
+			if(!$scope.research._language) {
 				return $q.reject('נא לבחור לפחות שפה אחת');
 			}
-
-			if(!$scope.user._musicStyle) {
+			if(!$scope.research._musicStyle) {
 				return $q.reject('נא לבחור לפחות סגנון מוזיקלי אחד');
 			}
-
-			if(!$scope.user._countries) {
+			if(!$scope.research._countries) {
 				return $q.reject('נא לבחור ארץ לידה');
-			}*/
+			}
+			if(!$scope.selectedStartDate) {
+				return $q.reject('נא לבחור תאריך התחלה');
+			}
+			if(!$scope.selectedEndDate) {
+				return $q.reject('נא לבחור תאריך סיום');
+			}
+			if(!$scope.research._sampleGroup) {
+				return $q.reject('נא לבחור קבוצת מדגם');
+			}
 
 			return $q.resolve();
 		}
