@@ -6,14 +6,14 @@
         </md-input-container>
     </div>
     <md-list>
-        <md-list-item class="md-3-line" ng-click="addUserToArry(user, $event)" ng-repeat="user in allUsers | filter: filterType">
+        <md-list-item class="md-3-line" ng-click="addUserToArr(user, $event)" ng-repeat="user in allUsers | filter: filterType">
           <div class="md-list-item-text " layout="row">				  	
                   <div layout="column ">	  	
                     <h2>{{ user._firstName }}</h2>		    	
                     <p>תאריך לידה: {{ user._birthDate | date }}</p>
                     <span ng-if="user._isAdmin">מנהל</span>
                     <span ng-if="user._isResearcher">חוקר</span>
-                    <md-checkbox ng-model="user._isResearchParticipant">הוסף למחקר</md-checkbox>
+                    <span ng-if="user._isResearchParticipant">משתתף במחקר</span>
                 </div>		
           </div>
           <md-divider ></md-divider>

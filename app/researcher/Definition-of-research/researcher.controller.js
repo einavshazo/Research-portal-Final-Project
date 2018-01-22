@@ -4,6 +4,7 @@ angular.module('orledor')
 
 		
 		$scope.research = {};
+		var aaa = [];
 
 		languages
 		.then(function (res) {
@@ -58,25 +59,34 @@ angular.module('orledor')
 				});
 		}
 
+		
 		$scope.allUsers = function(user, ev) {
-			return $mdDialog.show({
-				controller: 'userListController',
-				templateUrl: 'app/researcher/user-list/user-list.html',
-				targetEvent: ev,
-				clickOutsideToClose: true,
-				locals: {
-					user: user
-				}
-			})
-			.then(function (user) {
-				return firebase.child('users')
-					.child(user._userName)
-					.update(user);
-			})
-			.then(function () {
-				return loadAllUsers();
-			});
+			if($scope.research._researchName)
+			{
+				return $mdDialog.show({
+					controller: 'userListController',
+					templateUrl: 'app/researcher/user-list/user-list.html',
+					targetEvent: ev,
+					clickOutsideToClose: true,
+					locals: {
+						user: user
+					}
+				})
+				.then(function () {
+					return loadAllUsers();
+				});
+			}
+			else
+			{
+				alert("נא למלא שם מחקר");
+			}
 		}
+		
+
+
+	
+	
+
 
 		$scope.register = function(account, ev) {
 			return $mdDialog.show({

@@ -2,6 +2,25 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
 
     loadAllUsers();
 
+    $scope.addUserToArr = function(account, ev) {
+        return $mdDialog.show({
+            controller: 'addUserToArrController',
+            templateUrl: 'app/researcher/user-list/add-user/add-user.html',
+            targetEvent: ev,
+            clickOutsideToClose: true,
+            locals: {
+            	account: account
+            }
+        })
+        .then(function (user) {
+        	return firebase.child('users')
+				.child(user._userName)
+				.update(user);
+        })
+        .then(function () {
+        	return loadAllUsers();
+        });
+    };
 
     function loadAllUsers() {
         $scope.allUsers = [];
@@ -15,28 +34,7 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
             });
     };
 
-    var initIsResearcherWatch = false;
-    $scope.$watch('user._isResearchParticipant', function () {
-        if(initIsResearcherWatch) {
-            $mdToast.show($mdToast.simple().textContent('שים לב! משתמש זה נוסף למחקר!'));
-        } 
-        initIsResearcherWatch = true;       
-    });
+    
 
 
-
-   /* $scope.addUserToArry = function(user, ev){
-        console.log(user._firstName);
-        $scope.ccc = [];
-
-        return firebase.child('users').once('value')
-        .then(function(users) {
-            $scope.ccc = _.values(users.val());
-        })
-        .then(function() {
-            $scope.$apply();
-        });
-
-        console.log(_.values(users.val()));
-    }*/
 });
