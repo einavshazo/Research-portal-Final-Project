@@ -1,6 +1,7 @@
-angular.module('orledor').controller('userListController', function($scope, $mdDialog, $q, firebase, loggedUser) {
+angular.module('orledor').controller('userListController', function($scope, $mdDialog, $q, firebase, loggedUser, researchName, researchNumber) {
 
     loadAllUsers();
+
 
     $scope.addUserToArr = function(account, ev) {
         return $mdDialog.show({
@@ -9,13 +10,26 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
             targetEvent: ev,
             clickOutsideToClose: true,
             locals: {
-            	account: account
+                account: account,
+                researchName: researchName,
+                researchNumber: researchNumber
+
             }
         })
         .then(function (user) {
+            if(user._isResearchParticipant == true)
+            {
+                user._userResearchName = researchName;
+                user._researchNumber = researchNumber;
+            }
+            else
+            {
+                user._userResearchName = "";
+                user._researchNumber = "";
+            }
         	return firebase.child('users')
 				.child(user._userName)
-				.update(user);
+                .update(user);
         })
         .then(function () {
         	return loadAllUsers();

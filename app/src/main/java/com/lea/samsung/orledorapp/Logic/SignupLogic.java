@@ -14,7 +14,8 @@ public class SignupLogic {
     public boolean SignUp(String userName,
                           String password,
                           String firstName,
-                          String lastName,
+                          String userResearchName,
+                          String researchNumber,
                           Date birthDate,
                           List<String> languages)
     {
@@ -22,7 +23,8 @@ public class SignupLogic {
         newUser.set_userName(userName);
         newUser.set_password(password);
         newUser.set_firstName(firstName);
-        newUser.set_lastName(lastName);
+        newUser.set_userResearchName(userResearchName);
+        newUser.set_researchNumber(researchNumber);
         newUser.set_birthDate(birthDate);
         newUser.set_language(languages);
 

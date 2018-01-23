@@ -37,7 +37,14 @@ public class ResearchesDal extends BaseDal {
 
     public boolean SaveResearch(Research research) {
         String researchName = research.get_researchName();
+        String researchNumber = research.get_researchNumber();
+
         if(researchName == null || researchName.isEmpty())
+        {
+            return false;
+        }
+
+        if(researchNumber == null || researchNumber.isEmpty())
         {
             return false;
         }

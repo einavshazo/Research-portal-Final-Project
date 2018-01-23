@@ -11,20 +11,23 @@ import java.util.List;
  * Created by USER on 17/1/2018.
  */
 public class SaveNewResearchesLogic {
-    public boolean SaveNewResearche(String researchName,
-                          String rearchParticipate,
-                          String researchProcess,
-                          String researchVariables,
-                          List<String> languages,
-                          List<String> musicStyle,
-                          String countries,
-                          Date startDate,
-                          Date endDate,
-                          List<String> sampleGroup
-                          )
+    public boolean SaveNewResearche(
+                        String researchName,
+                        String researchNumber,
+                        String rearchParticipate,
+                        String researchProcess,
+                        String researchVariables,
+                        List<String> languages,
+                        List<String> musicStyle,
+                        String countries,
+                        Date startDate,
+                        Date endDate,
+                        List<String> sampleGroup
+                        )
     {
         Research newResearch = new Research();
         newResearch.set_researchName(researchName);
+        newResearch.set_researchNumber(researchNumber);
         newResearch.set_rearchParticipate(rearchParticipate);
         newResearch.set_researchProcess(researchProcess);
         newResearch.set_ResearchVariables(researchVariables);

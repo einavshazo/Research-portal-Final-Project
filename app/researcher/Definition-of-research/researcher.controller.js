@@ -4,16 +4,10 @@ angular.module('orledor')
 
 		
 		$scope.research = {};
-		var aaa = [];
 
 		languages
 		.then(function (res) {
 			$scope.languages = res;
-		})
-
-		sampleGroups
-		.then(function (res) {
-			$scope.sampleGroups = res;
 		})
 
 		musicStyle
@@ -47,29 +41,44 @@ angular.module('orledor')
 
 					$scope.research._startDate = $scope.selectedStartDate.toISOString();
 					$scope.research._endDate = $scope.selectedEndDate.toISOString();
-	
+
 					return firebase.child('researches').child($scope.research._researchName).set($scope.research);
 				})
-				.then(function () {
+				.then(function (user) {
 					loggedResearch.setResearch($scope.research);
+				
+					if (!$scope.research._sampleGroup) {
+						$scope.research._sampleGroup = [];
+					}
+						
+					$scope.research._sampleGroup.push("user._userName");
+				})
+				.then(function () {
+						return firebase.child('researches')
+							.child($scope.research._researchName)
+							.update($scope.research);
+				})
+				.then(function () {
 					$state.go('researches-list');
 				})
 				.catch(function (err) {
 					console.log(err);
 				});
 		}
-
 		
 		$scope.allUsers = function(user, ev) {
-			if($scope.research._researchName)
+			if($scope.research._researchName && $scope.research._researchNumber)
 			{
+
 				return $mdDialog.show({
 					controller: 'userListController',
 					templateUrl: 'app/researcher/user-list/user-list.html',
 					targetEvent: ev,
 					clickOutsideToClose: true,
 					locals: {
-						user: user
+						user: user,
+						researchName: $scope.research._researchName,
+						researchNumber: $scope.research._researchNumber
 					}
 				})
 				.then(function () {
@@ -78,7 +87,7 @@ angular.module('orledor')
 			}
 			else
 			{
-				alert("נא למלא שם מחקר");
+				alert("חובה למלא שם מחקר ומספר מזהה");
 			}
 		}
 		
@@ -98,19 +107,15 @@ angular.module('orledor')
 					account: account
 				}
 			})
-			/*.then(function (user) {
-				return firebase.child('users')
-					.child(user._userName)
-					.update(user);
-			})
-			.then(function () {
-				return loadAllUsers();
-			});*/
+
 		};
 
 		function ensureResearcher() {
 			if(!$scope.research._researchName) {
 				return $q.reject('נא למלא שם מחקר');
+			}
+			if(!$scope.research._researchNumber) {
+				return $q.reject('נא למלא מספר מזהה למחקר');
 			}
 			if(!$scope.research._rearchParticipate) {
 				return $q.reject('נא למלא משתתפי מחקר');

@@ -1,36 +1,14 @@
-angular.module('orledor').controller('addUserToArrController', function($scope, $mdDialog, $mdToast, $q, firebase, account) {
+angular.module('orledor').controller('addUserToArrController', function($scope, $mdDialog, $mdToast, $q, firebase, account, researchName, researchNumber) {
     $scope.account = angular.copy(account);
 
-    /*$scope.$watch('shouldShowPassword', function() {
-        if ($scope.shouldShowPassword) {
-            $scope.passwordInputType = 'text';
-        } else {
-            $scope.passwordInputType = 'password';
-        }
-    });
-
-    var initIsAdminWatch = false;
-    $scope.$watch('account._isAdmin', function () {
-        if(initIsAdminWatch) {
-            $mdToast.show($mdToast.simple().textContent('שים לב! הפיכת משתמש למנהל תיתן לאותו המשתש הרשאות על המערכת!'));
-        } 
-        initIsAdminWatch = true;       
-    });
-
-    var initIsResearcherWatch = false;
-    $scope.$watch('account._isResearcher', function () {
-        if(initIsResearcherWatch) {
-            $mdToast.show($mdToast.simple().textContent('שים לב! הפיכת משתמש לחוקר תיתן לאותו המשתש הרשאות על המערכת!'));
-        } 
-        initIsResearcherWatch = true;       
-    });*/
+   // console.log(researchName);
 
     var initIsParticipantWatch = false;
     $scope.$watch('account._isResearchParticipant', function () {
         if(initIsParticipantWatch) {
             $mdToast.show($mdToast.simple().textContent('הוספת משתמש למחקר'));
         } 
-        initIsParticipantWatch = true;       
+        initIsParticipantWatch = true; 
     });
 
 

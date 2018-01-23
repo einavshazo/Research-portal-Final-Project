@@ -12,7 +12,8 @@ public class User {
     private String _userName;
     private String _password;
     private String _firstName;
-    private String _lastName;
+    private String _userResearchName;
+    private String _researchNumber;
     private Date _birthDate;
     private List<String> _language;
     private List<BaseMultimedia> _userMultimedia;
@@ -50,12 +51,20 @@ public class User {
         this._firstName = _firstName;
     }
 
-    public String get_lastName() {
-        return _lastName;
+    public String get_userResearchName() {
+        return _userResearchName;
     }
 
-    public void set_lastName(String _lastName) {
-        this._lastName = _lastName;
+    public void set_userResearchName(String _userResearchName) {
+        this._userResearchName = _userResearchName;
+    }
+
+    public String get_researchNumber() {
+        return _researchNumber;
+    }
+
+    public void set_researchNumber(String _researchNumber) {
+        this._researchNumber = _researchNumber;
     }
 
     public Date get_birthDate() {

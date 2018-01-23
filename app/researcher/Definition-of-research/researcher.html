@@ -10,6 +10,11 @@
 			</md-input-container>
 
 			<md-input-container>
+				<label>מספר מזהה למחקר</label>
+				<input ng-model="research._researchNumber">
+			</md-input-container>
+
+			<md-input-container>
 				<label>משתתפי המחקר</label>
 				<input ng-model="research._rearchParticipate">
 			</md-input-container>
@@ -50,11 +55,6 @@
 
 			<md-datepicker ng-model="selectedEndDate" md-placeholder="סיום המחקר"></md-datepicker>
 			
-			<!--<md-input-container>
-				<md-select ng-model="research._sampleGroup" placeholder="קבוצת מדגם">
-					<md-option ng-value="sampleGroup" ng-repeat="sampleGroup in sampleGroups">{{ sampleGroup }}</md-option>
-				</md-select>
-			</md-input-container>-->
 
 			<md-button class="md-primary" ng-click="allUsers($event)">בחירת משתתפים מרשימה קיימת</md-button>
 			<md-button class="md-primary" ng-click="register($event)">הוספת משתמש חדש</md-button>
