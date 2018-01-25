@@ -1,5 +1,9 @@
-angular.module('orledor').controller('addUserToArrController', function($scope, $mdDialog, $mdToast, $q, firebase, account, researchName, researchNumber) {
+angular.module('orledor').controller('addUserToArrController', function($scope, $mdDialog, $mdToast, $q, firebase, 
+                                                                account, researchName, researchNumber) {
     $scope.account = angular.copy(account);
+
+    
+
 
    // console.log(researchName);
 

@@ -78,7 +78,7 @@ angular.module('orledor')
 				.then(function () {
 					return loadAllUsers();
 				})
-				then(function(sampleGroup) {
+				then(function(sampleGroup, research) {
 					$scope.research._sampleGroup = sampleGroup;
 				});
 			}
@@ -92,15 +92,18 @@ angular.module('orledor')
 		$scope.save = function(ev) {
 
 			if(flag == true){
+
+				firebase.child('researches')
+					.child($scope.research._researchName)
+                	.update($scope.research);
+				
 				$state.go('researches-list');
 			}
 			else
 			{
 				alert("dfdfgf")
 			}
-
 		}
-
 
 
 		$scope.register = function(account, ev) {

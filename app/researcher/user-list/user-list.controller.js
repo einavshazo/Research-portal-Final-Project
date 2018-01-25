@@ -13,7 +13,6 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
                 account: account,
                 researchName: researchName,
                 researchNumber: researchNumber
-
             }
         })
         .then(function (user) {
@@ -21,31 +20,22 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
             {
                 user._userResearchName = researchName;
                 user._researchNumber = researchNumber;
+                sampleGroup.push(account._userName);
             }
             else
             {
                 user._userResearchName = "";
                 user._researchNumber = "";
+                sampleGroup.forEach(function(item, index, object) {
+                    if (item === account._userName) {
+                      object.splice(index, 1);
+                    }
+                });
             }
-
-            sampleGroup.push(user._userName);
-
         	return firebase.child('users')
 				.child(user._userName)
                 .update(user);
         })
-
-//--------------------------------------------------
-      /*  .then(function (user) {
-           
-        })
-        .then(function () {
-            return firebase.child('researches')
-                .child(researchName)
-                .update(research);
-        })*/
-
-//------------------------------------------------------
         .then(function () {
         	return loadAllUsers();
         });
