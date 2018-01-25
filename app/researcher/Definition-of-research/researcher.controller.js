@@ -4,6 +4,7 @@ angular.module('orledor')
 
 		
 		$scope.research = {};
+		var flag = false;
 
 		languages
 		.then(function (res) {
@@ -46,20 +47,10 @@ angular.module('orledor')
 				})
 				.then(function (user) {
 					loggedResearch.setResearch($scope.research);
-				
-					if (!$scope.research._sampleGroup) {
-						$scope.research._sampleGroup = [];
-					}
-						
-					$scope.research._sampleGroup.push("user._userName");
 				})
 				.then(function () {
-						return firebase.child('researches')
-							.child($scope.research._researchName)
-							.update($scope.research);
-				})
-				.then(function () {
-					$state.go('researches-list');
+					$scope.allUsers();
+					flag = true;
 				})
 				.catch(function (err) {
 					console.log(err);
@@ -69,7 +60,9 @@ angular.module('orledor')
 		$scope.allUsers = function(user, ev) {
 			if($scope.research._researchName && $scope.research._researchNumber)
 			{
-
+				if (!$scope.research._sampleGroup) {
+					$scope.research._sampleGroup = [];
+				}
 				return $mdDialog.show({
 					controller: 'userListController',
 					templateUrl: 'app/researcher/user-list/user-list.html',
@@ -78,23 +71,36 @@ angular.module('orledor')
 					locals: {
 						user: user,
 						researchName: $scope.research._researchName,
-						researchNumber: $scope.research._researchNumber
+						researchNumber: $scope.research._researchNumber,
+						sampleGroup: $scope.research._sampleGroup
 					}
 				})
 				.then(function () {
 					return loadAllUsers();
+				})
+				then(function(sampleGroup) {
+					$scope.research._sampleGroup = sampleGroup;
 				});
 			}
 			else
 			{
 				alert("חובה למלא שם מחקר ומספר מזהה");
 			}
-		}
+		}	
 		
 
+		$scope.save = function(ev) {
 
-	
-	
+			if(flag == true){
+				$state.go('researches-list');
+			}
+			else
+			{
+				alert("dfdfgf")
+			}
+
+		}
+
 
 
 		$scope.register = function(account, ev) {
@@ -109,6 +115,9 @@ angular.module('orledor')
 			})
 
 		};
+
+
+		
 
 		function ensureResearcher() {
 			if(!$scope.research._researchName) {
@@ -141,6 +150,7 @@ angular.module('orledor')
 			if(!$scope.selectedEndDate) {
 				return $q.reject('נא לבחור תאריך סיום');
 			}
+
 
 			return $q.resolve();
 		}

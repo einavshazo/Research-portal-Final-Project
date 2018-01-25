@@ -1,4 +1,4 @@
-angular.module('orledor').controller('userListController', function($scope, $mdDialog, $q, firebase, loggedUser, researchName, researchNumber) {
+angular.module('orledor').controller('userListController', function($scope, $mdDialog, $q, firebase, loggedUser, researchName, researchNumber,sampleGroup) {
 
     loadAllUsers();
 
@@ -27,10 +27,25 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
                 user._userResearchName = "";
                 user._researchNumber = "";
             }
+
+            sampleGroup.push(user._userName);
+
         	return firebase.child('users')
 				.child(user._userName)
                 .update(user);
         })
+
+//--------------------------------------------------
+      /*  .then(function (user) {
+           
+        })
+        .then(function () {
+            return firebase.child('researches')
+                .child(researchName)
+                .update(research);
+        })*/
+
+//------------------------------------------------------
         .then(function () {
         	return loadAllUsers();
         });
