@@ -1,12 +1,12 @@
 angular.module('orledor')
 	.controller('researcherController', function($scope, $state, $mdDialog, $q, firebase, loggedResearch, languages, 
-										countries, sampleGroups, musicStyle) {
+										countries, algorithm, sampleGroups, musicStyle) {
 
 		
 		$scope.research = {};
 		var flag = false;
 
-		languages
+		/*languages
 		.then(function (res) {
 			$scope.languages = res;
 		})
@@ -19,6 +19,11 @@ angular.module('orledor')
 		countries
 		.then(function (res) {
 			$scope.countries = res;
+		})*/
+
+		algorithm
+		.then(function (res) {
+			$scope.algorithm = res;
 		})
 
 		.then(function () {
@@ -138,7 +143,7 @@ angular.module('orledor')
 			if(!$scope.research._researchVariables) {
 				return $q.reject('נא למלא משתני מחקר');
 			}
-			if(!$scope.research._language) {
+		/*	if(!$scope.research._language) {
 				return $q.reject('נא לבחור לפחות שפה אחת');
 			}
 			if(!$scope.research._musicStyle) {
@@ -146,6 +151,9 @@ angular.module('orledor')
 			}
 			if(!$scope.research._countries) {
 				return $q.reject('נא לבחור ארץ לידה');
+			}	*/
+			if(!$scope.research._algorithm) {
+				return $q.reject('נא לבחור אלגוריתם');
 			}
 			if(!$scope.selectedStartDate) {
 				return $q.reject('נא לבחור תאריך התחלה');

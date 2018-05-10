@@ -20,6 +20,7 @@ public class SaveNewResearchesLogic {
                         List<String> languages,
                         List<String> musicStyle,
                         String countries,
+                        String algorithm,
                         Date startDate,
                         Date endDate,
                         List<String> sampleGroup
@@ -34,6 +35,7 @@ public class SaveNewResearchesLogic {
         newResearch.set_languages(languages);
         newResearch.set_musicStyle(musicStyle);
         newResearch.set_countries(countries);
+        newResearch.set_algorithm(algorithm);
         newResearch.set_startDate(startDate);
         newResearch.set_endDate(endDate);
         newResearch.set_sampleGroup(sampleGroup);

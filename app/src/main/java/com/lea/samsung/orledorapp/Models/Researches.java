@@ -16,6 +16,7 @@ public class Researches {
     private List<String> _language;
     private List<String> _musicStyle;
     private String _countries;
+    private String _algorithm;
     private Date _startDate;
     private Date _endDate;
     private List<String> _sampleGroup;
@@ -77,6 +78,13 @@ public class Researches {
         this._countries = _countries;
     }
 
+    public String get_algorithm() {
+        return _algorithm;
+    }
+
+    public void set_algorithm(String _algorithm) {
+        this._algorithm = _algorithm;
+    }
     public Date get_startDate() {
         return _startDate;
     }
