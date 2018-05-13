@@ -10,7 +10,8 @@
           <div class="md-list-item-text " layout="row">				  	
                   <div layout="column ">	  	
                         <h2>{{ researches._researchName }}</h2>	
-                        <h5>מס' מזהה מחקר: {{ researches._researchNumber }}</h5>		    	
+                        <h5>מס' מזהה מחקר: {{ researches._researchNumber }}</h5>
+                        <p>אלגוריתם: {{ researches._algorithm }}</p>		    	
                         <p>תאריך התחלה: {{ researches._startDate | date }}, &nbsp; תאריך סיום: {{ researches._endDate | date }}</p>
                         <p>משתתפי המחקר: <span ng-bind="researches._sampleGroup"></span></p> 
                   </div>		
