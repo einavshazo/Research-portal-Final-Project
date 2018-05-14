@@ -144,6 +144,23 @@
     min-width:600px
 }
 
+
+md-tooltip .md-content {
+    height: auto;
+}
+
+.tooltip-inner
+{
+    word-break: break-all;
+    width: 500px;
+    text-align: center;
+}
+
+.span-white-space
+{
+    white-space: normal;
+}
+
 /*# sourceMappingURL=app.css.map */
 
 

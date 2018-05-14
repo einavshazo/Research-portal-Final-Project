@@ -106,7 +106,7 @@ angular.module('orledor')
 			}
 			else
 			{
-				alert("dfdfgf")
+				alert("error")
 			}
 		}
 
@@ -125,7 +125,6 @@ angular.module('orledor')
 		};
 
 
-		
 
 		function ensureResearcher() {
 			if(!$scope.research._researchName) {
