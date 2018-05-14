@@ -1,4 +1,4 @@
-angular.module('orledor').controller('researchesListController', function($scope, $mdDialog, firebase, loggedResearch) {
+angular.module('orledor').controller('researchesListController', function($scope, $state, $mdDialog, firebase, loggedResearch) {
 
     loadAllResearches();
 
@@ -16,39 +16,12 @@ angular.module('orledor').controller('researchesListController', function($scope
     };
 
 
-    $scope.researchDetails = function(ev) {
+    $scope.researchDetails = function(research, ev) {
 
-        var aaaaaa;
-      //  aaaaaa = researches._researchName;
-        //firebase.child('researches').once('value')
-     //   .then(function(researches) {
-    //        aaaaaa = researches.__researchName;
-      //  });
-      //  .then(function() {
-      //      $scope.$apply();
-      //  });
-       // alert(aaaaaa);
+       $state.go('selected-research');
 
        console.log(aaaaaa);
 
-       /* if(flag == true){
-
-            firebase.child('researches')
-                .child($scope.research._researchName)
-                .update($scope.research);
-            
-            $state.go('researches-list');
-
-            alert("aaaaaa");
-        }
-        else
-        {
-            alert("dfdfgf")
-        }*/
     }
-
-   /* function aaaaaa() {
-        alert("fffffffff");
-    };*/
 
 });

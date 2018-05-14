@@ -55,7 +55,7 @@ angular.module('orledor')
 				})
 				.then(function () {
 					$scope.allUsers();
-					flag = true;
+					flag = true; 	//Checks if participants were selected in the study before defining the study
 				})
 				.catch(function (err) {
 					console.log(err);
