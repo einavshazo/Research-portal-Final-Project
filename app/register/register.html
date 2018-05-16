@@ -1,5 +1,9 @@
-<div layout="column" layout-align="center center">
+<div layout="row" layout-align="center start">
+<div layout="column" layout-align="center start">
 	<md-card layout="column" layout-padding>
+			
+		<label>פרטי התחברות:</label>
+
 		<md-input-container>
 			<label>שם משתמש</label>
 			<input ng-model="user._userName">
@@ -15,19 +19,119 @@
 			<input type="password" ng-model="retypePassword">
 		</md-input-container>
 
+		<label>פרטים אישיים:</label>
+
 		<md-input-container>
 			<label>שם מלא</label>
 			<input ng-model="user._firstName">
 		</md-input-container>
 
+		<md-input-container>
+				<label>מחלקה</label>
+				<input>
+			</md-input-container>
+
 		<md-datepicker ng-model="selectedBirthDate" md-placeholder="שנת לידה"></md-datepicker>
 
 		<md-input-container>
-			<md-select ng-model="user._language" placeholder="שפות מדוברות" multiple="true">
+			<md-select ng-model="user._language" placeholder="שפת אם">
 				<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
 			</md-select>
 		</md-input-container>
 
-		<md-button class="md-primary" ng-click="register($event)">הירשם</md-button>
+		<md-input-container>
+				<md-select ng-model="user._language" placeholder="שפות מדוברות מהילדות" multiple="true">
+					<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container>
+				<label>עיסוק עיקרי בעבר</label>
+				<input>
+		</md-input-container>
+		
+		<md-input-container>
+				<label>תחביבים</label>
+				<input>
+		</md-input-container>
+		
 	</md-card>
+</div>
+
+	<div layout="column" layout-align="center start">
+		<md-card layout="column" layout-padding>
+		
+			<label>סיפור חיים:</label>
+
+			<md-input-container>
+				<label>היכן נולד</label>
+				<input>
+			</md-input-container>
+	
+			<md-input-container>
+				<label>אירוע מכונן שעבר</label>
+				<input>
+			</md-input-container>
+	
+			<md-input-container>
+					<label>ארצות שעבר אליהן במהלך חייו</label>
+					<input>
+			</md-input-container>
+				
+			<md-input-container>
+					<label>מתי ואיפה התחתן (בקירוב)</label>
+					<input>
+			</md-input-container>
+
+			<md-input-container>
+					<label>האם שירת בצבא? אם כן היכן</label>
+					<input>
+			</md-input-container>
+
+			<md-input-container>
+					<label>האם עבר מלחמה</label>
+					<input>
+			</md-input-container>
+
+			<md-input-container>
+					<label>אם כן היכן ובאיזה שנים</label>
+					<input>
+			</md-input-container>
+
+			<md-input-container>
+					<label>פירוט נוסף:</label>
+					<input>
+			</md-input-container>
+
+			<md-input-container>
+					<label>מלל חופשי:</label>
+					<input>
+			</md-input-container>
+
+		</md-card>
+	</div>
+
+
+	<div layout="column" layout-align="center start">
+			<md-card layout="column" layout-padding>
+			
+				<label>מצב רפואי:</label>
+	
+				<md-input-container>
+						<md-select ng-model="research._algorithm" placeholder="בחר מצב רפואי מתאים">
+							<md-option ng-value="status" ng-repeat="status in statusOfPhysicians">{{ status }}</md-option>
+						</md-select>
+				</md-input-container>
+
+				
+
+				<md-input-container>
+						<label>פרט במלל חופשי:</label>
+						<input>
+				</md-input-container>
+	
+				<md-button class="md-primary" ng-click="register($event)">הירשם</md-button>
+			</md-card>
+		</div>
+
 </div>

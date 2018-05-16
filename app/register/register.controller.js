@@ -1,5 +1,5 @@
 angular.module('orledor')
-	.controller('registerController', function ($scope, $state, $mdDialog, $q, $http, firebase, loggedUser, languages) {
+	.controller('registerController', function ($scope, $state, $mdDialog, $q, $http, firebase, loggedUser, languages, statusOfPhysicians) {
 		// init user object
 		$scope.user = {};
 
@@ -10,6 +10,13 @@ angular.module('orledor')
 			.then(function () {
 				$scope.$apply();
 			});
+
+			
+		statusOfPhysicians
+		.then(function (res) {
+			$scope.statusOfPhysicians = res;
+		})
+
 
 		$scope.register = function (ev) {
 			return ensureRegister()
