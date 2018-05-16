@@ -84,8 +84,13 @@
 			</md-input-container>
 
 			<md-input-container>
-					<label>האם שירת בצבא? אם כן היכן</label>
+					<label>האם שירת בצבא</label>
 					<input>
+			</md-input-container>
+
+			<md-input-container>
+				<label>אם כן היכן ובאיזה שנים</label>
+				<input>
 			</md-input-container>
 
 			<md-input-container>
@@ -94,7 +99,7 @@
 			</md-input-container>
 
 			<md-input-container>
-					<label>אם כן היכן ובאיזה שנים</label>
+					<label>אם כן היכן ואיזו</label>
 					<input>
 			</md-input-container>
 
@@ -118,7 +123,7 @@
 				<label>מצב רפואי:</label>
 	
 				<md-input-container>
-						<md-select ng-model="research._algorithm" placeholder="בחר מצב רפואי מתאים">
+						<md-select ng-model="research._algorithm" placeholder="בחר מצב רפואי אחד מתאים">
 							<md-option ng-value="status" ng-repeat="status in statusOfPhysicians">{{ status }}</md-option>
 						</md-select>
 				</md-input-container>
