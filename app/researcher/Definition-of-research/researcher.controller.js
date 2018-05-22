@@ -6,21 +6,6 @@ angular.module('orledor')
 		$scope.research = {};
 		var flag = false;
 
-		/*languages
-		.then(function (res) {
-			$scope.languages = res;
-		})
-
-		musicStyle
-		.then(function (res) {
-			$scope.musicStyle = res;
-		})
-
-		countries
-		.then(function (res) {
-			$scope.countries = res;
-		})*/
-
 		algorithm
 		.then(function (res) {
 			$scope.algorithm = res;

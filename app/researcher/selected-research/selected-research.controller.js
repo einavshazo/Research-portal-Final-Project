@@ -1,56 +1,17 @@
-angular.module('orledor').controller('selectedResearchController', function($scope, $state, $mdDialog, firebase, loggedResearch) {
-
-    loadAllResearches();
+angular.module('orledor').controller('selectedResearchController', function($scope, $state, $stateParams, $mdDialog, firebase, loggedResearch) {
 
 
-    function loadAllResearches() {
-        $scope.allResearches = [];
-
-        return firebase.child('researches').once('value')
-            .then(function(researches) {
-                $scope.allResearches = _.values(researches.val());
-            })
-            .then(function() {
-                $scope.$apply();
-            });
-    };
+    var name = $stateParams.name;
+    var id = $stateParams.id;
 
 
-    $scope.researchDetails = function(research, ev) {
+    console.log(name, id);
 
-        var aaaaaa;
-      //  aaaaaa = researches._researchName;
-        //firebase.child('researches').once('value')
-     //   .then(function(researches) {
-    //        aaaaaa = researches.__researchName;
-      //  });
-      //  .then(function() {
-      //      $scope.$apply();
-      //  });
-       // alert(aaaaaa);
 
-       $state.go('researcher-home');
+    $scope.name = name;
+    $scope.id = id;
 
-       console.log(aaaaaa);
 
-       /* if(flag == true){
-
-            firebase.child('researches')
-                .child($scope.research._researchName)
-                .update($scope.research);
-            
-            $state.go('researches-list');
-
-            alert("aaaaaa");
-        }
-        else
-        {
-            alert("dfdfgf")
-        }*/
-    }
-
-   /* function aaaaaa() {
-        alert("fffffffff");
-    };*/
+    
 
 });

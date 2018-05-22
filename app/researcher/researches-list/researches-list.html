@@ -6,7 +6,7 @@
         </md-input-container>
     </div>
     <md-list>
-        <md-list-item class="md-3-line" ng-click="researchDetails(research, $event)" ng-repeat="researches in allResearches | filter: filterType">
+        <md-list-item class="md-3-line" ng-click="researchDetails(researches, $event)" ng-repeat="researches in allResearches | filter: filterType">
           <div class="md-list-item-text " layout="row">				  	
                   <div layout="column ">	  	
                         <h2>{{ researches._researchName }}</h2>	
