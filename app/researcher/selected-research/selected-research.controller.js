@@ -11,7 +11,8 @@ angular.module('orledor').controller('selectedResearchController', function($sco
     $scope.name = name;
     $scope.id = id;
 
-
-    
+    firebase.child("researches").orderByKey().equalTo(id).on("child_added", function(snapshot) {
+    console.log(snapshot.key()); // on newer SDKs, this may be snapshot.key
+  });
 
 });
