@@ -1,41 +1,63 @@
 angular.module('orledor').controller('selectedResearchController', function($scope, $state, $stateParams, $mdDialog, firebase, loggedResearch) {
 
-  // loadAllResearches();
+
+  
 
     var name = $stateParams.name;
     var id = $stateParams.id;
 
 
-    console.log(name, id);
-
-
     $scope.name = name;
     $scope.id = id;
-
-    firebase.child("researches").orderByKey().equalTo(name).on("child_added", function(snapshot) {
-    console.log(snapshot.key()); // on newer SDKs, this may be snapshot.key
-    });
+    $scope.test = [];
 
 
-    var ref = firebase.child("researches/" + name);
-    ref.once("value")
-    .then(function(snapshot) {
-    $scope.test = snapshot.child("_researchName").val(); 
-    $scope.rname = snapshot.child("_algorithm").val(); 
-    });
+    LoadSpecificResearch(name);
+  
+
+    // firebase.child("researches").orderByKey().equalTo(name).on("child_added", function(snapshot) {
+    //   console.log(snapshot.key()); 
+    //   // $scope.test = snapshot.child("_researchName").val(); 
+    //   $scope.test = _.values(snapshot.val());
 
 
-  // function loadAllResearches() {
-  //   $scope.allResearches = [];
+    //   // $scope.test.push("שם מחקר: " + snapshot.child("_researchName").val());
+    //   // $scope.test.push("מספר מזהה: " + snapshot.child("_researchNumber").val());
+    //   // $scope.test.push("תאריך התחלה: " + snapshot.child("_startDate").val());
+    //   // $scope.test.push("תאריך סיום: " + snapshot.child("_endDate").val());
 
-  //   return firebase.child('researches/' + name).once('value')
-  //       .then(function(researches) {
-  //         var name1 = researches.child("researches._researchName").val();
-  //       })
-  //       .then(function() {
-  //           $scope.$apply();
-  //       });
+
+
+    //   $scope.$apply();
+    // });
+
+
+  //   function LoadSpecificResearch(name) {
+  //     $scope.researchDetails = [];
+
+  //     return firebase.child("researches").orderByKey().equalTo(name).on("child_added", function(snapshot) {
+  //     console.log(snapshot.key()); 
+  //     $scope.researchDetails = _.values(snapshot.val());
+
+  //     console.log($scope.researchDetails);
+
+  //     $scope.$apply();
+  //   });
+
   // };
+
+  function LoadSpecificResearch(name) {
+    $scope.researchDetails = [];
+
+    return firebase.child('researches').child(name).once('value')
+        .then(function(researches) {
+            $scope.researchDetails = _.values(researches.val());
+            console.log($scope.researchDetails);
+        })
+        .then(function() {
+            $scope.$apply();
+        });
+  };
 
 
 });

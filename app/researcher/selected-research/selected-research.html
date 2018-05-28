@@ -1,20 +1,11 @@
 <md-card class="selected-research" dir="rtl">    
-    <div>
-        <md-input-container>
-            <label>הזן שם מחקר:</label>
-            <input type="text" ng-model="filterType._researchName">
-        </md-input-container>
+    
+    <h1>ברוך הבא לדף של המחקר "{{name}}", מספר מזהה - {{id}}</h1>
+   
+    <div ng-repeat="researches in researchDetails">
+            {{researches}}<br />
     </div>
 
 
-    <h1>ברוך הבא לדף של המחקר "{{name}}", מספר מזהה - {{id}}</h1>
 
-    <h2>{{ test }}</h2>	
-    <h2>{{ rname }}</h2>	
-    <!-- <h2>{{ researches._researchName }}</h2>	                    
-    <h5>מס' מזהה מחקר: {{ researches._researchNumber }}</h5>
-    <p>אלגוריתם: {{ researches._algorithm }}</p>		    	
-    <p>תאריך התחלה: {{ researches._startDate | date }}, &nbsp; תאריך סיום: {{ researches._endDate | date }}</p>
-    <p>משתתפי המחקר: <span ng-bind="researches._sampleGroup"></span></p>  -->
- 
 </md-card>
