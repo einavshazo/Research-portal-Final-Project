@@ -28,31 +28,31 @@
 
 		<md-input-container>
 				<label>מחלקה</label>
-				<input>
+				<input ng-model="user._department">
 		</md-input-container>
 
 		<md-datepicker ng-model="selectedBirthDate" md-placeholder="שנת לידה"></md-datepicker>
 
 		<md-input-container>
-			<md-select ng-model="user._lastName" placeholder="שפת אם">
+			<md-select ng-model="user._nativeLanguage" placeholder="שפת אם">
 				<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
 			</md-select>
 		</md-input-container>
 
 		<md-input-container>
-				<md-select ng-model="user._language" placeholder="שפות מדוברות מהילדות" multiple="true">
+				<md-select ng-model="user._childhoodLanguages" placeholder="שפות מדוברות מהילדות" multiple="true">
 					<md-option ng-value="lan" ng-repeat="lan in languages">{{ lan }}</md-option>
 				</md-select>
 		</md-input-container>
 
 		<md-input-container>
 				<label>עיסוק עיקרי בעבר</label>
-				<input>
+				<input ng-model="user._pastEmployment">
 		</md-input-container>
 		
 		<md-input-container>
 				<label>תחביבים</label>
-				<input>
+				<input ng-model="user._hobbies">
 		</md-input-container>
 		
 	</md-card>
@@ -65,53 +65,53 @@
 
 			<md-input-container>
 				<label>היכן נולד</label>
-				<input>
+				<input ng-model="user._q1" >
 			</md-input-container>
 	
 			<md-input-container>
 				<label>אירוע מכונן שעבר</label>
-				<input>
+				<input ng-model="user._q2" >
 			</md-input-container>
 	
 			<md-input-container>
 					<label>ארצות שעבר אליהן במהלך חייו</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q3" >
+				</md-input-container>
 				
 			<md-input-container>
 					<label>מתי ואיפה התחתן (בקירוב)</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q4" >
+				</md-input-container>
 
 			<md-input-container>
 					<label>האם שירת בצבא</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q5" >
+				</md-input-container>
 
 			<md-input-container>
 				<label>אם כן היכן ובאיזה שנים</label>
-				<input>
+				<input ng-model="user._q5a" >
 			</md-input-container>
 
 			<md-input-container>
 					<label>האם עבר מלחמה</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q6" >
+				</md-input-container>
 
 			<md-input-container>
 					<label>אם כן היכן ואיזו</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q6a" >
+				</md-input-container>
 
 			<md-input-container>
 					<label>פירוט נוסף:</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q6b" >
+				</md-input-container>
 
 			<md-input-container>
 					<label>מלל חופשי:</label>
-					<input>
-			</md-input-container>
+					<input ng-model="user._q7" >
+				</md-input-container>
 
 		</md-card>
 	</div>
@@ -123,7 +123,7 @@
 				<label>מצב רפואי:</label>
 	
 				<md-input-container>
-						<md-select ng-model="research._algorithm" placeholder="בחר מצב רפואי אחד מתאים">
+						<md-select ng-model="user._medicalCondition" placeholder="בחר מצב רפואי אחד מתאים">
 							<md-option ng-value="status" ng-repeat="status in statusOfPhysicians">{{ status }}</md-option>
 						</md-select>
 				</md-input-container>
@@ -132,7 +132,7 @@
 
 				<md-input-container>
 						<label>פרט במלל חופשי:</label>
-						<input>
+						<input ng-model="user._medicalCondition_freeText">
 				</md-input-container>
 	
 				<md-button class="md-primary" ng-click="register($event)">הירשם</md-button>

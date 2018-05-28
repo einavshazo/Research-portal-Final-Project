@@ -57,17 +57,17 @@ angular.module('orledor')
 				return $q.reject('הסיסמא והוידאוי סיסמא אינם תואמים')
 			}
 
-			if (!$scope.user._firstName) {
-				return $q.reject('חובה למלא שם מלא')
-			}
+			// if (!$scope.user._firstName) {
+			// 	return $q.reject('חובה למלא שם מלא')
+			// }
 
-			if (!$scope.selectedBirthDate) {
-				return $q.reject('חובה למלא תאריך לידה')
-			}
+			// if (!$scope.selectedBirthDate) {
+			// 	return $q.reject('חובה למלא תאריך לידה')
+			// }
 
-			if (!$scope.user._language || !$scope.user._language.length) {
-				return $q.reject('חובה למלא לפחות שפה מדוברת אחת')
-			}
+			// if (!$scope.user._language || !$scope.user._language.length) {
+			// 	return $q.reject('חובה למלא לפחות שפה מדוברת אחת')
+			// }
 
 			return $q.resolve();
 		}

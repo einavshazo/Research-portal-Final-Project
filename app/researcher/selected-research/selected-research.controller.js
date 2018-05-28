@@ -59,5 +59,6 @@ angular.module('orledor').controller('selectedResearchController', function($sco
         });
   };
 
+  
 
 });
