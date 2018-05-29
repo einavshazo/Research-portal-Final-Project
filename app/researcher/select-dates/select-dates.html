@@ -1,0 +1,19 @@
+<md-card class="select-dates" dir="rtl">    
+    
+    <!-- <md-datepicker ng-model="selectedStartDate" md-placeholder="פגישה ראשונה"></md-datepicker>
+   
+    <md-datepicker ng-model="selectedStartDate" md-placeholder="פגישת אמצע תקופת מדגם"></md-datepicker>
+
+    <md-datepicker ng-model="selectedStartDate" md-placeholder="פגישה אחרונה"></md-datepicker> -->
+
+    <md-content ng-controller="selectDatesController as ctrl" layout-padding ng-cloak>
+            <div layout-gt-xs="row">
+              <div flex-gt-xs>
+                <h4>Date-picker with min date and max date</h4>
+                <md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"
+                    md-min-date="ctrl.minDate" md-max-date="ctrl.maxDate"></md-datepicker>
+              </div>
+    </md-content>
+
+
+</md-card>

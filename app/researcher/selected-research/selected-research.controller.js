@@ -7,12 +7,14 @@ angular.module('orledor').controller('selectedResearchController', function($sco
     var id = $stateParams.id;
 
 
+
     $scope.name = name;
     $scope.id = id;
     $scope.test = [];
 
 
     LoadSpecificResearch(name);
+    
   
 
     // firebase.child("researches").orderByKey().equalTo(name).on("child_added", function(snapshot) {
@@ -59,6 +61,32 @@ angular.module('orledor').controller('selectedResearchController', function($sco
         });
   };
 
-  
+    // //showPopup();
+
+    // $scope.init = function(){
+    //     alert("ccccccccc");
+    // };
+
+    // // setTimeout(showPopup, 4000);
+    // function showPopup()
+    // {
+    //     alert("aaaa");
+    //     console.log("bbbb");
+    // }
+
+    $mdDialog.show({
+        controller: 'selectDatesController',
+        templateUrl: 'app/researcher/select-dates/select-dates.html',
+        // // targetEvent: ev,
+         clickOutsideToClose: true,
+         locals: {
+            startDate: startDate,
+            endDate: endDate
+        //     // researchNumber: $scope.research._researchNumber,
+        //     // sampleGroup: $scope.research._sampleGroup
+        }
+    })
+
+    
 
 });
