@@ -20,6 +20,7 @@ public class Researches {
     private Date _startDate;
     private Date _endDate;
     private List<String> _sampleGroup;
+    private boolean _isFirstTime;
 
 
     public String get_researchName() {
@@ -107,6 +108,14 @@ public class Researches {
 
     public List<String> get_sampleGroup() {
         return _sampleGroup;
+    }
+
+    public boolean is_isFirstTime() {
+        return _isFirstTime;
+    }
+
+    public void set_isFirstTime(boolean _isFirstTime) {
+        this._isFirstTime = _isFirstTime;
     }
 }
 

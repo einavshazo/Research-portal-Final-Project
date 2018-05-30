@@ -3,8 +3,6 @@ angular.module('orledor').controller('addUserToArrController', function($scope, 
     $scope.account = angular.copy(account);
 
     
-
-
    // console.log(researchName);
 
     var initIsParticipantWatch = false;

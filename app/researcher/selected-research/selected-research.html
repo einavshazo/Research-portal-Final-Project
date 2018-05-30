@@ -1,11 +1,14 @@
-<md-card class="selected-research" dir="rtl">    
+<md-card class="selected-research" dir="rtl" >    
     
     <h1>ברוך הבא לדף של המחקר "{{name}}", מספר מזהה - {{id}}</h1>
    
-    <div ng-repeat="researches in researchDetails">
-            {{researches}}<br />
+    <div ng-init="init()">
+        <div ng-app="orledor" ng-controller="selectedResearchController">
+            <div ng-repeat="researches in researchDetails">
+                {{researches}}<br />
+            </div>
+        </div>
     </div>
-
     
 
 

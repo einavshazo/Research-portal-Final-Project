@@ -1,18 +1,10 @@
-var app = angular.module('orledor').controller('selectDatesController', function($scope, $state, $stateParams, $mdDialog, firebase, loggedResearch) {
+angular.module('orledor').controller('selectDatesController', function($scope, $mdDialog, $mdToast, $q, firebase, startDate, endDate) {
 
-    
-    this.myDate = new Date();
+    // $scope.dates = {};
+    console.log("ccc " + startDate);
+     console.log("eeeee" + endDate);
 
-    this.minDate = new Date(
-      this.myDate.getFullYear(),
-      this.myDate.getMonth() - 2,
-      this.myDate.getDate()
-    );
-  
-    this.maxDate = new Date(
-      this.myDate.getFullYear(),
-      this.myDate.getMonth() + 2,
-      this.myDate.getDate()
-    );
+    $scope.minDate = new Date(startDate);
+    $scope.maxDate = new Date(endDate);
 
 });
