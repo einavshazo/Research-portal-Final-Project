@@ -1,4 +1,4 @@
-angular.module('orledor').controller('selectDatesController', function($scope, $mdDialog, $mdToast, $q, firebase, startDate, endDate) {
+angular.module('orledor').controller('settingUpSessionsController', function($scope, $mdDialog, $mdToast, $q, firebase, startDate, endDate) {
 
     // $scope.dates = {};
     console.log("ccc " + startDate);

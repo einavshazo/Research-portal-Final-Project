@@ -62,9 +62,10 @@
 
 		-->
 
-			<md-datepicker ng-model="selectedStartDate" md-placeholder="תחילת המחקר"></md-datepicker>
+			<md-datepicker timezoned-date ng-attr-timezone="{{jsTimeZone}}" ng-model="selectedStartDate" md-placeholder="תחילת המחקר"></md-datepicker>
 
-			<md-datepicker ng-model="selectedEndDate" md-placeholder="סיום המחקר"></md-datepicker>
+
+			<md-datepicker timezoned-date ng-attr-timezone="{{jsTimeZone}}" ng-model="selectedEndDate" md-placeholder="סיום המחקר"></md-datepicker>
 			
 
 			<md-button class="md-primary" ng-click="researcher($event)">בחירת משתתפים מרשימה קיימת</md-button>

@@ -51,7 +51,20 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
         return firebase.child('researches').child(name).once('value')
         .then(function(researches) {
-            $scope.researchDetails = _.values(researches.val());
+            // $scope.researchDetails = _.values(researches.val());
+
+            var startDate = new Date(researches.child("_startDate").val());
+            var date = new Date(startDate).toDateString("dd-MM-yyyy");
+
+            $scope.researchDetails.push("תאריך תחילת המחקר: " + date);
+
+            var endDate = new Date(researches.child("_endDate").val());
+            var date = new Date(endDate).toDateString("dd-MM-yyyy");
+
+            $scope.researchDetails.push("תאריך סיום המחקר: " + date);
+            $scope.researchDetails.push("משתתפי המחקר: " + researches.child("_sampleGroup").val());
+            $scope.researchDetails.push("אלגוריתם התאמה: " + researches.child("_algorithm").val());
+
         })
         .then(function() {
             $scope.$apply();
@@ -85,8 +98,8 @@ angular.module('orledor').controller('selectedResearchController', function($sco
                     firebase.child('researches').child(name).update({_isFirstTime:false});
                     
                     $mdDialog.show({
-                        controller: 'selectDatesController',
-                        templateUrl: 'app/researcher/select-dates/select-dates.html',
+                        controller: 'settingUpSessionsController',
+                        templateUrl: 'app/researcher/setting-up-sessions/setting-up-sessions.html',
                         clickOutsideToClose: true,
                         locals: {
                             startDate: startDate,
