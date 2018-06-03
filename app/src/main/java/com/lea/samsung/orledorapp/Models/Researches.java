@@ -21,6 +21,7 @@ public class Researches {
     private Date _endDate;
     private List<String> _sampleGroup;
     private boolean _isFirstTime;
+    private List<String> _datesArr;
 
 
     public String get_researchName() {
@@ -116,6 +117,14 @@ public class Researches {
 
     public void set_isFirstTime(boolean _isFirstTime) {
         this._isFirstTime = _isFirstTime;
+    }
+
+    public void set_datesArr(List<String> _datesArr) {
+        this._datesArr = _datesArr;
+    }
+
+    public List<String> get_datesArr() {
+        return _datesArr;
     }
 }
 

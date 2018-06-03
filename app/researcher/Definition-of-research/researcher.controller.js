@@ -83,7 +83,7 @@ angular.module('orledor')
 
 			if(flag == true){
 
-				firebase.child('researches').child($scope.research._researchName).set({_isFirstTime: true});
+				firebase.child('researches').child($scope.research._researchName).set({_isFirstTime: true, _datesArr: null});
 
 				firebase.child('researches')
 					.child($scope.research._researchName)

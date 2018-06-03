@@ -1,11 +1,15 @@
 <md-card class="setting-up-sessions" dir="rtl">    
     
+
         <div layout-gt-xs="row">
             <div flex-gt-xs>
-                <h4>Date-picker with min date and max date</h4>
-                <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+                <h4>עלייך להגדיר את מספר המפגשים למחקר ע"י בחירת תאריך המפגש הראשון</h4>
+                <md-datepicker ng-model="daytime" md-placeholder="Enter date"
                     md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
         </div>
+        </div>
 
+
+        <md-button class="md-primary" ng-click="send($event)">שלח</md-button>
 
 </md-card>
