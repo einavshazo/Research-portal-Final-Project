@@ -9,6 +9,8 @@ angular.module('orledor').controller('selectedResearchController', function($sco
     $scope.id = id;
     $scope.userName = "(אנא בחר מטופל מתוך רשימת משתתפי המחקר)";
     
+    var clientDate = new Date();
+    console.log(clientDate);
 
     LoadSpecificResearch(name);
 
@@ -118,11 +120,9 @@ angular.module('orledor').controller('selectedResearchController', function($sco
                         $scope.selectedDate = function(index)
                         {
                             var selectedDate = $scope.dateArray[index];
-                            // console.log("selectedDate " +  selectedDate);
 
                             var number = $scope.dateArray.length;
                             number--;
-                            // console.log("length " + number);
 
                             if(index == 0)
                             {
