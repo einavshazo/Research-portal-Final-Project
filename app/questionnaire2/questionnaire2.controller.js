@@ -1,18 +1,29 @@
 angular.module('orledor')
-	.controller('questionnaire2Controller', function ($scope, $state, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
-		// init user object
-		$scope.user = {};
+	.controller('questionnaire2Controller', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
 
-		grade
-		.then(function (res) {
-			$scope.grade = res;
-		})
+		var userName = $stateParams.userName;
+
+		firebase.child('users').child(userName).once('value')
+        .then(function(user) {
+			$scope.userName = user.child("_firstName").val();
+        })
+        .then(function() {
+                $scope.$apply();
+        });
+ 
+//--------------------------------------------------------------------------------------------
+
+
+		// grade
+		// .then(function (res) {
+		// 	$scope.grade = res;
+		// })
 
 			
-		statusOfPhysicians
-		.then(function (res) {
-			$scope.statusOfPhysicians = res;
-		})
+		// statusOfPhysicians
+		// .then(function (res) {
+		// 	$scope.statusOfPhysicians = res;
+		// })
 
 
 		$scope.questionnaire2 = function (ev) {
@@ -27,14 +38,14 @@ angular.module('orledor')
 
 					return $q.reject();
 				})
-				.then(function () {
-					$scope.user._birthDate = $scope.selectedBirthDate.toISOString();
+				// .then(function () {
+				// 	$scope.user._birthDate = $scope.selectedBirthDate.toISOString();
 
-					return firebase.child('users').child($scope.user._userName).set($scope.user);										
-				})
+				// 	return firebase.child('users').child($scope.user._userName).set($scope.user);										
+				// })
 				.then(function () {
-					loggedUser.setUser($scope.user);
-					$state.go('home');
+					// loggedUser.setUser($scope.user);
+					$state.go('questionnaire3', {'userName': userName});
 				})
 				.catch(function (err) {
 					console.log(err);
@@ -42,29 +53,29 @@ angular.module('orledor')
 		}
 
 		function ensureQuestionnaire2() {
-			if (!$scope.user._userName) {
-				return $q.reject('חובה למלא שם משתמש')
-			}
+			// if (!$scope.user._userName) {
+			// 	return $q.reject('חובה למלא שם משתמש')
+			// }
 
-			if (!$scope.user._password) {
-				return $q.reject('חובה למלא סיסמא')
-			}
+			// if (!$scope.user._password) {
+			// 	return $q.reject('חובה למלא סיסמא')
+			// }
 
-			if ($scope.user._password !== $scope.retypePassword) {
-				return $q.reject('הסיסמא והוידאוי סיסמא אינם תואמים')
-			}
+			// if ($scope.user._password !== $scope.retypePassword) {
+			// 	return $q.reject('הסיסמא והוידאוי סיסמא אינם תואמים')
+			// }
 
-			if (!$scope.user._firstName) {
-				return $q.reject('חובה למלא שם מלא')
-			}
+			// if (!$scope.user._firstName) {
+			// 	return $q.reject('חובה למלא שם מלא')
+			// }
 
-			if (!$scope.selectedBirthDate) {
-				return $q.reject('חובה למלא תאריך לידה')
-			}
+			// if (!$scope.selectedBirthDate) {
+			// 	return $q.reject('חובה למלא תאריך לידה')
+			// }
 
-			if (!$scope.user._language || !$scope.user._language.length) {
-				return $q.reject('חובה למלא לפחות שפה מדוברת אחת')
-			}
+			// if (!$scope.user._language || !$scope.user._language.length) {
+			// 	return $q.reject('חובה למלא לפחות שפה מדוברת אחת')
+			// }
 
 			return $q.resolve();
 		}

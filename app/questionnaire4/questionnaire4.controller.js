@@ -1,18 +1,29 @@
 angular.module('orledor')
-	.controller('questionnaire4Controller', function ($scope, $state, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
-		// init user object
-		$scope.user = {};
+	.controller('questionnaire4Controller', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
+		
+		var userName = $stateParams.userName;
 
-		grade
-		.then(function (res) {
-			$scope.grade = res;
-		})
+		firebase.child('users').child(userName).once('value')
+        .then(function(user) {
+			$scope.userName = user.child("_firstName").val();
+        })
+        .then(function() {
+                $scope.$apply();
+        });
+
+
+//------------------------------------------------------------------------------
+		// grade
+		// .then(function (res) {
+		// 	$scope.grade = res;
+		// })
 
 			
-		statusOfPhysicians
-		.then(function (res) {
-			$scope.statusOfPhysicians = res;
-		})
+		// statusOfPhysicians
+		// .then(function (res) {
+		// 	$scope.statusOfPhysicians = res;
+		// })
+
 
 
 		$scope.questionnaire4 = function (ev) {

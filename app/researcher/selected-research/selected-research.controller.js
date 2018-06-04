@@ -114,7 +114,30 @@ angular.module('orledor').controller('selectedResearchController', function($sco
         firebase.child('users').child(userName).once('value')
                     .then(function(user) {
                         $scope.userName = user.child("_firstName").val();
-                        // console.log("userName 22222222 " + $scope.userName);
+
+                        $scope.selectedDate = function(index)
+                        {
+                            var selectedDate = $scope.dateArray[index];
+                            // console.log("selectedDate " +  selectedDate);
+
+                            var number = $scope.dateArray.length;
+                            number--;
+                            // console.log("length " + number);
+
+                            if(index == 0)
+                            {
+                                $state.go('questionnaire2', {'userName': userName});
+                            }
+                            else if(index > 0 && index < number)
+                            {
+                                $state.go('questionnaire4', {'userName': userName});
+                            }
+                            else
+                            {
+                                $state.go('questionnaire5', {'userName': userName});
+                            }
+                            
+                        }
                     })
                     .then(function() {
                         $scope.$apply();

@@ -23,9 +23,18 @@
                 </md-list-item>	
             </md-list> 
 
-            <p ng-repeat="temps in dateArray track by $index" ng-click="aaaa">
-             {{temps}}<br/>
-            </p>
+            <h3>מועדי מפגשים:</h3>
+            <md-list>
+                <md-list-item class="md-3-line" ng-click="selectedDate($index)" ng-repeat="temps in dateArray track by $index">
+                    <div class="md-list-item-text " layout="row">				  	
+                        <div layout="column ">	  	
+                            <div>{{ temps }}</div>	
+                        </div>		
+                    </div>
+                </md-list-item>	
+            </md-list> 
+
+
         </div>
     </div>
     
