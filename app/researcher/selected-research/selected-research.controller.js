@@ -3,13 +3,11 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
     var name = $stateParams.name;
     var id = $stateParams.id;
-    // var dateArray = [];
     
 
     $scope.name = name;
     $scope.id = id;
-    // $scope.dateArray = [];
-    
+    $scope.userName = "(אנא בחר מטופל מתוך רשימת משתתפי המחקר)";
     
 
     LoadSpecificResearch(name);
@@ -17,6 +15,7 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
     function LoadSpecificResearch(name) {
         $scope.researchDetails = [];
+        $scope.sampleGroup = [];
 
         return firebase.child('researches').child(name).once('value')
         .then(function(researches) {
@@ -30,8 +29,15 @@ angular.module('orledor').controller('selectedResearchController', function($sco
             var date = new Date(endDate).toDateString("dd-MM-yyyy");
 
             $scope.researchDetails.push("תאריך סיום המחקר: " + date);
-            $scope.researchDetails.push("משתתפי המחקר: " + researches.child("_sampleGroup").val());
             $scope.researchDetails.push("אלגוריתם התאמה: " + researches.child("_algorithm").val());
+
+
+            $scope.sampleGroup = researches.child("_sampleGroup").val();
+
+            // $scope.sampleGroup.forEach(function(item, index, object) {
+            //     var sampleGroupArr = $scope.sampleGroup[index];
+            //     console.log(sampleGroupArr);
+            // });
 
         })
         .then(function() {
@@ -41,52 +47,84 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
 
     $scope.init = function() {
-        
-        var startDate = " ", endDate = "";
-        // $scope.dateArray = [];
+       
+        if($state.go('selected-research')){
+            
+            var startDate = " ", endDate = "";
     
-        firebase.child('researches').child(name).once('value')
-        .then(function(researches) {
+            firebase.child('researches').child(name).once('value')
+            .then(function(researches) {
     
-            startDate = researches.child("_startDate").val();
-            endDate = researches.child("_endDate").val();
+                startDate = researches.child("_startDate").val();
+                endDate = researches.child("_endDate").val();
 
-            if (researches.child("_isFirstTime").val()) {
+                if (researches.child("_isFirstTime").val()) {
                    
-                console.log(researches.child("_isFirstTime").val());
+                    console.log(researches.child("_isFirstTime").val());
 
-                //    לבטל את ההערה!!!!!
-                    // firebase.child('researches').child(name).update({_isFirstTime:false});      
+                    //    לבטל את ההערה!!!!!
+                    firebase.child('researches').child(name).update({_isFirstTime:false});      
                     
-                $mdDialog.show({
-                    controller: 'settingUpSessionsController',
-                    templateUrl: 'app/researcher/setting-up-sessions/setting-up-sessions.html',
-                    clickOutsideToClose: false,
-                    locals: {
-                        startDate: startDate,
-                        endDate: endDate
-                    }   
-                })
-                .then((temp) => {
+                    $mdDialog.show({
+                        controller: 'settingUpSessionsController',
+                        templateUrl: 'app/researcher/setting-up-sessions/setting-up-sessions.html',
+                        clickOutsideToClose: false,
+                        locals: {
+                            startDate: startDate,
+                            endDate: endDate
+                        }   
+                    })
+                    .then((temp) => {
                    
-                    $scope.temp = temp;
-                    // console.log("3333333 " + $scope.temp);
+                        $scope.temp = temp;
 
-                    firebase.child('researches').child(name).update({_datesArr: $scope.temp}); 
+                        firebase.child('researches').child(name).update({_datesArr: $scope.temp}); 
                     
-                    firebase.child('researches').child(name).once('value')
-                    .then(function(researches) {
-                        $scope.dateArray = researches.child("_datesArr").child("0").val();
+                        firebase.child('researches').child(name).once('value')
+                        .then(function(researches) {
+                            $scope.dateArray = researches.child("_datesArr").child("0").val();
+                        })
+                        .then(function() {
+                            $scope.$apply();
+                        });
+                        
+                    });
+
+                }           
+            }); 
+    
+            firebase.child('researches').child(name).once('value')
+            .then(function(researches) {
+                $scope.dateArray = researches.child("_datesArr").child("0").val();             
+            })
+            .then(function() {
+                $scope.$apply();
+            });
+    
+        }
+    
+    };
+
+
+    $scope.details = function(index) {
+
+        var userName = $scope.sampleGroup[index];
+        console.log("userName 1111111 " + userName);
+
+        firebase.child('users').child(userName).once('value')
+                    .then(function(user) {
+                        $scope.userName = user.child("_firstName").val();
+                        // console.log("userName 22222222 " + $scope.userName);
                     })
                     .then(function() {
                         $scope.$apply();
                     });
-                    
-                });
+        // var num = researches._researchNumber;
+        
 
-            }           
-        }); 
-    
-    };
+        // $state.go('selected-research', {'name': name, 'id': num});
+ 
+     }
+ 
     
 });

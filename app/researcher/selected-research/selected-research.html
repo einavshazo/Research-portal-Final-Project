@@ -10,6 +10,19 @@
                 {{researches}}<br/>
             </div>
 
+            <p>הינך משוייך כעת למטופל: {{userName}}</p>
+
+            <h3>משתתפי המחקר:</h3>
+            <md-list>
+                <md-list-item class="md-3-line" ng-click="details($index)" ng-repeat="sampleGroups in sampleGroup track by $index">
+                    <div class="md-list-item-text " layout="row">				  	
+                        <div layout="column ">	  	
+                            <div>{{ sampleGroups }}</div>	
+                        </div>		
+                    </div>
+                </md-list-item>	
+            </md-list> 
+
             <p ng-repeat="temps in dateArray track by $index" ng-click="aaaa">
              {{temps}}<br/>
             </p>
