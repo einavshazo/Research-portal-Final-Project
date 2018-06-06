@@ -62,7 +62,7 @@ angular.module('orledor')
 						user: user,
 						researchName: $scope.research._researchName,
 						researchNumber: $scope.research._researchNumber,
-						sampleGroup: $scope.research._sampleGroup
+						sampleGroup: $scope.research._sampleGroup,
 					}
 				})
 				.then(function () {

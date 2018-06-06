@@ -28,7 +28,7 @@ public class User {
     private String _q7;
     private List<String> _medicalCondition;
     private String _medicalCondition_freeText;
-    private String _userResearchName;
+    private List<String> _userResearchName;
     private String _researchNumber;
     private Date _birthDate;
     private List<String> _childhoodLanguages;
@@ -103,7 +103,7 @@ public class User {
         return _q1;
     }
 
-    public void set_q1(String _q) {
+    public void set_q1(String _q1) {
         this._q1 = _q1;
     }
 
@@ -196,11 +196,11 @@ public class User {
         this._medicalCondition_freeText = _medicalCondition_freeText;
     }
 
-    public String get_userResearchName() {
+    public List<String> get_userResearchName() {
         return _userResearchName;
     }
 
-    public void set_userResearchName(String _userResearchName) {
+    public void set_userResearchName(List<String> _userResearchName) {
         this._userResearchName = _userResearchName;
     }
 

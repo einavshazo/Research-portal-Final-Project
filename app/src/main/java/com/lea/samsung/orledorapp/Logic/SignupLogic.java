@@ -30,7 +30,7 @@ public class SignupLogic {
                           String q7,
                           List<String> medicalCondition,
                           String medicalCondition_freeText,
-                          String userResearchName,
+                          List<String> userResearchName,
                           String researchNumber,
                           Date birthDate,
                           List<String> childhoodLanguages)

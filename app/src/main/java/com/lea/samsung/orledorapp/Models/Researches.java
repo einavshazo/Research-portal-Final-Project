@@ -1,6 +1,5 @@
 package com.lea.samsung.orledorapp.Models;
 
-//import com.lea.samsung.orledorapp.Inerfaces.IRecommended;
 
 import java.util.Date;
 import java.util.List;

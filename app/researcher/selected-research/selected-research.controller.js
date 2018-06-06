@@ -3,7 +3,8 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
     var name = $stateParams.name;
     var id = $stateParams.id;
-    
+    var mid_date;
+
 
     $scope.name = name;
     $scope.id = id;
@@ -35,11 +36,6 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
 
             $scope.sampleGroup = researches.child("_sampleGroup").val();
-
-            // $scope.sampleGroup.forEach(function(item, index, object) {
-            //     var sampleGroupArr = $scope.sampleGroup[index];
-            //     console.log(sampleGroupArr);
-            // });
 
         })
         .then(function() {
@@ -97,7 +93,7 @@ angular.module('orledor').controller('selectedResearchController', function($sco
     
             firebase.child('researches').child(name).once('value')
             .then(function(researches) {
-                $scope.dateArray = researches.child("_datesArr").child("0").val();             
+                $scope.dateArray = researches.child("_datesArr").child("0").val();      
             })
             .then(function() {
                 $scope.$apply();
@@ -108,14 +104,37 @@ angular.module('orledor').controller('selectedResearchController', function($sco
     };
 
 
+    firebase.child('researches').child(name).once('value')
+    .then(function(researches) {
+                
+            var startDate = new Date(researches.child("_startDate").val());
+            var date_start = new Date(startDate).toDateString("dd-MM-yyyy");  
+                
+            var endDate = new Date(researches.child("_endDate").val());
+            var date_end = new Date(endDate).toDateString("dd-MM-yyyy");
+    
+            mid_date = new Date((startDate.getTime() + endDate.getTime()) / 2);
+    });
+
+
     $scope.details = function(index) {
 
         var userName = $scope.sampleGroup[index];
+       
         console.log("userName 1111111 " + userName);
 
+        
         firebase.child('users').child(userName).once('value')
                     .then(function(user) {
                         $scope.userName = user.child("_firstName").val();
+
+                        if(clientDate >= mid_date)
+                        {
+                            alert("שים לב הגעת לאצמע תקופת המדגם ולכן עלייך למלא את 'טופס אמצע תקופת מדגם'. הנך מועבר לטופס.")
+                            $state.go('questionnaire_mid_sample', {'userName': userName});
+                            //להפוך את זה לחד פעמי אחרי יצירת הטבלה ב DB
+                            
+                        }
 
                         $scope.selectedDate = function(index)
                         {
