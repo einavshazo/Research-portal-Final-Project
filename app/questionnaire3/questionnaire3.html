@@ -13,59 +13,54 @@
 
 		<md-input-container>
 			<label>איך היה?</label>
-			<input>			<!--ng-model="user._userName"-->
+			<input ng-model="questionnaire3._how_was_it">			
 		</md-input-container>
 
 		<md-input-container>
 			<label>איך הרגשת לאחר שצפית בתוכן המותאם?</label>
-			<input>			<!--ng-model="user._userName"-->
+			<input ng-model="questionnaire3._feel">
 			<md-tooltip class="tooltip-multiline" md-direction="left">פרט מה התוכן המדוייק שבו צפה ומה הרגיש לגביו
 			</md-tooltip>
 		</md-input-container>
 
 		<md-input-container>
 			<label>מה אהבת בלהיות כאן?</label>
-			<input>
-		</md-input-container>
-
-		<md-input-container>
-				<label>איך הרגשת לראות את...?</label>
-				<input>
+			<input ng-model="questionnaire3._love">
 		</md-input-container>
 
 		<md-input-container>
 			<label>האם תרצה לבוא שוב?</label>
-			<input>
+			<input ng-model="questionnaire3._come_again">
 		</md-input-container>
 
 		<md-input-container>
 			<label>האם הדייר הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים <br/ >בקבוצה לתוכן הנצפה?</label>
-			<input>
+			<input ng-model="questionnaire3._interest_in_others_txt">
 		</md-input-container>
 
 		<md-input-container>
 			<label>האם היית רוצה לראות תכנים אחרים? אם כן, איזה?</label>
-			<input>
+			<input ng-model="questionnaire3._other_media">
 		</md-input-container>
 
 		<md-input-container>
 			<label>שאלה נוספת (מלל חופשי)</label>
-			<input>
+			<input ng-model="questionnaire3.another_question_1_txt">
 		</md-input-container>
 
 		<md-input-container>
-			<md-select ng-model="user._userName" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+			<md-select ng-model="questionnaire3.another_question_1_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
 				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 			</md-select>
 		</md-input-container>
 
 		<md-input-container>
 			<label>שאלה נוספת (מלל חופשי)</label>
-			<input>
+			<input ng-model="questionnaire3.another_question_2_txt">
 		</md-input-container>
 
 		<md-input-container>
-			<md-select ng-model="user._userName" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+			<md-select ng-model="questionnaire3.another_question_2_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
 				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 			</md-select>
 		</md-input-container>
@@ -76,49 +71,49 @@
 		</label>
 	
 		<md-input-container>
-				<md-select ng-model="user._userName" placeholder="מופנם/מסוגר">
+				<md-select ng-model="questionnaire3._introvert_num" placeholder="מופנם/מסוגר">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="user._firstName" placeholder="סקרן">
+				<md-select ng-model="questionnaire3._curious_num" placeholder="סקרן">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 				
 		<md-input-container>
-				<md-select ng-model="user._lastName" placeholder="מתלהב">
+				<md-select ng-model="questionnaire3._enthusiastic_num" placeholder="מתלהב">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="דברן">
+				<md-select ng-model="questionnaire3._talker_num" placeholder="דברן">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 						
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="עייף/רדום">
+				<md-select ng-model="questionnaire3._tired_num" placeholder="עייף/רדום">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 						
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="אדיש">
+				<md-select ng-model="questionnaire3._apathetic_num" placeholder="אדיש">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 										
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
+				<md-select ng-model="questionnaire3._personal_life_num" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 										
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="האם הקשיש הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים בקבוצה לתוכן הנצפה?">
+				<md-select ng-model="questionnaire3._interest_in_others_num" placeholder="האם הקשיש הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים בקבוצה לתוכן הנצפה?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
@@ -127,7 +122,7 @@
 
 		<md-input-container>
 			<label>האם הייתה תגובה רגשית כלשהי?</label>
-			<input>
+			<input ng-model="questionnaire3._emotional_response_txt">
 			<md-tooltip class="tooltip-multiline" md-direction="left">תגובה מילולית (מתחיל לדבר, מדבר עם המסך/המדריך, מביע רצון מילולי/פיזי לראות תכנים וכו') <br/>
 				תגובה רגשית (בכי, חיוך, צחוק וכו')
 			</md-tooltip>
@@ -135,21 +130,21 @@
 
 		<md-input-container>
 				<label>האם הייתה תגובה פיזית כלשהי?</label>
-				<input>
+				<input ng-model="questionnaire3._physical_reaction_txt">
 				<md-tooltip class="tooltip-multiline" md-direction="left">תגובה פיזית (רוקד, מוחא כפיים, מנסה להזיז איבר גוף שלא מזיז בדרך כלל, יצירת אינטימיות וכו')
 				</md-tooltip>
 		</md-input-container>
 		
 		<md-input-container>
 				<label>האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?</label>
-				<input>
+				<input ng-model="questionnaire3._physical_change_txt">
 				<md-tooltip class="tooltip-multiline" md-direction="left">לפרט כל תשובה עם עזרת הצוות הרפואי על-מנת להבין מה זה "מעט שינוי" או כל הגדרה אחרת.
 				</md-tooltip>
 		</md-input-container>
 
 		<md-input-container>
-				<label>האם בתום זמן הפעיולת הוא יוצא ברצון?</label>
-				<input>
+			<label>האם בתום זמן הפעיולת הוא יוצא ברצון?</label>
+			<input ng-model="questionnaire3._agree_to_exit_txt">
 		</md-input-container>
 
 		<label>
@@ -157,25 +152,25 @@
 		</label>
 	
 		<md-input-container>
-				<md-select ng-model="user._userName" placeholder="האם הייתה תגובה רגשית כלשהי?">
+				<md-select input ng-model="questionnaire3._emotional_response_num" placeholder="האם הייתה תגובה רגשית כלשהי?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="user._firstName" placeholder="האם הייתה תגובה פיזית כלשהי?">
+				<md-select input ng-model="questionnaire3._physical_reaction_num" placeholder="האם הייתה תגובה פיזית כלשהי?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 				
 		<md-input-container>
-				<md-select ng-model="user._lastName" placeholder="האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?">
+				<md-select input ng-model="questionnaire3._physical_change_num" placeholder="האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="האם בתום זמן הפעיולת הוא יוצא ברצון?">
+				<md-select input ng-model="questionnaire3._agree_to_exit_num" placeholder="האם בתום זמן הפעיולת הוא יוצא ברצון?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
