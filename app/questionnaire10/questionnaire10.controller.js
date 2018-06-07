@@ -1,5 +1,5 @@
 angular.module('orledor')
-	.controller('questionnaire10Controller', function ($scope, $state, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
+	.controller('questionnaire10Controller', function ($scope, $state, $mdDialog, $q, $http, firebase, loggedUser, grade) {
 		// init user object
 		$scope.user = {};
 
@@ -8,11 +8,6 @@ angular.module('orledor')
 			$scope.grade = res;
 		})
 
-			
-		statusOfPhysicians
-		.then(function (res) {
-			$scope.statusOfPhysicians = res;
-		})
 
 
 		$scope.questionnaire10 = function (ev) {

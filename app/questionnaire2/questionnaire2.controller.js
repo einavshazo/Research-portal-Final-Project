@@ -1,11 +1,21 @@
 angular.module('orledor')
-	.controller('questionnaire2Controller', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
+	.controller('questionnaire2Controller', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade) {
 
 		var userName = $stateParams.userName;
+		var researchName = $stateParams.researchName;
+
 
 		firebase.child('users').child(userName).once('value')
         .then(function(user) {
 			$scope.userName = user.child("_firstName").val();
+        })
+        .then(function() {
+                $scope.$apply();
+		});
+		
+		firebase.child('researches').child(researchName).once('value')
+        .then(function(research) {
+			$scope.researchName = research.child("_researchName").val();
         })
         .then(function() {
                 $scope.$apply();
@@ -14,16 +24,10 @@ angular.module('orledor')
 //--------------------------------------------------------------------------------------------
 
 
-		// grade
-		// .then(function (res) {
-		// 	$scope.grade = res;
-		// })
-
-			
-		// statusOfPhysicians
-		// .then(function (res) {
-		// 	$scope.statusOfPhysicians = res;
-		// })
+		grade
+		.then(function (res) {
+			$scope.grade = res;
+		})
 
 
 		$scope.questionnaire2 = function (ev) {
@@ -45,7 +49,7 @@ angular.module('orledor')
 				// })
 				.then(function () {
 					// loggedUser.setUser($scope.user);
-					$state.go('questionnaire3', {'userName': userName});
+					$state.go('questionnaire3', {'userName': userName, 'researchName': $scope.researchName});
 				})
 				.catch(function (err) {
 					console.log(err);

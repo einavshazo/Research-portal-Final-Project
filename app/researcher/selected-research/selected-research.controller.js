@@ -131,7 +131,7 @@ angular.module('orledor').controller('selectedResearchController', function($sco
                         if(clientDate >= mid_date)
                         {
                             alert("שים לב הגעת לאצמע תקופת המדגם ולכן עלייך למלא את 'טופס אמצע תקופת מדגם'. הנך מועבר לטופס.")
-                            $state.go('questionnaire_mid_sample', {'userName': userName});
+                            $state.go('questionnaire_mid_sample', {'userName': userName, 'researchName': name});
                             //להפוך את זה לחד פעמי אחרי יצירת הטבלה ב DB
                             
                         }
@@ -145,15 +145,15 @@ angular.module('orledor').controller('selectedResearchController', function($sco
 
                             if(index == 0)
                             {
-                                $state.go('questionnaire2', {'userName': userName});
+                                $state.go('questionnaire2', {'userName': userName, 'researchName': name});
                             }
                             else if(index > 0 && index < number)
                             {
-                                $state.go('questionnaire4', {'userName': userName});
+                                $state.go('questionnaire4', {'userName': userName, 'researchName': name});
                             }
                             else
                             {
-                                $state.go('questionnaire5', {'userName': userName});
+                                $state.go('questionnaire5', {'userName': userName, 'researchName': name});
                             }
                             
                         }

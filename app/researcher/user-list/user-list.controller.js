@@ -18,12 +18,8 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
         .then(function (user) {
             if(user._isResearchParticipant == true)
             {
-            
-                // user._userResearchName = researchName;
-                // user._researchNumber = researchNumber;
                 sampleGroup.push(account._userName);
     
-                // firebase.child('users').child(user._userName).child("_userResearchName").set({_userResearchName : researchName});
                 firebase.child('users').child(user._userName).child("userResearches").once('value')
                 .then(function(snapshot) {
                     const userData = snapshot.val();
@@ -37,24 +33,12 @@ angular.module('orledor').controller('userListController', function($scope, $mdD
                         console.log("not exists!");
                     }
                 });
-                // firebase.child('users').child(user._userName).child("userResearches").child(researchName).set({_userResearchName : researchName, _researchNumber : researchNumber});
                 
             }
-            // else
-            // {
-            //     // user._userResearchName = "";
-            //     user._researchNumber = "";
-            //     sampleGroup.forEach(function(item, index, object) {
-            //         if (item === account._userName) {
-            //           object.splice(index, 1);
-            //         }
-            //     });
-            //     user._userResearchName.forEach(function(item, index, object) {
-            //         if (item === researchName) {
-            //           object.splice(index, 1);
-            //         }
-            //     });
-            // }
+            else
+            {
+                user._isResearchParticipant = true;
+            }
         	return firebase.child('users')
 				.child(user._userName)
                 .update(user);

@@ -1,4 +1,4 @@
-<h1>שאלון סוף פגישה שנייה ומעלה עבור: {{userName}}</h1>
+<h1>שאלון סוף פגישה שנייה ומעלה עבור: {{userName}} במחקר "{{researchName}}"</h1>
 
 <div layout="row" layout-align="center start">
 <div layout="column" layout-align="center start">
@@ -42,8 +42,20 @@
 		</md-input-container>
 
 		<md-input-container>
+			<md-select ng-model="user._userName" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container>
 			<label>שאלה נוספת (מלל חופשי)</label>
 			<input>
+		</md-input-container>
+
+		<md-input-container>
+			<md-select ng-model="user._userName" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+			</md-select>
 		</md-input-container>
 
 		<label>
@@ -139,6 +151,17 @@
 		<md-input-container>
 				<label>האם יש שינוי במצב הרגשי שאיתו נכנס הקשיש לעומת המצב באמצע תקופת המדגם?</label>
 				<input>
+		</md-input-container>
+
+		<md-input-container>
+			<md-select ng-model="user._medicalCondition" placeholder="איזה תכנים רואה הקשיש?">
+				<md-option ng-value="media" ng-repeat="media in mediaWatched">{{ media }}</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container>
+			<label>במידה ובחרת בסעיף ו' "אחר" אנא פרט במלל </label>
+			<input>
 		</md-input-container>
 
 		<label>

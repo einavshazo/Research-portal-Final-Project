@@ -1,8 +1,10 @@
 angular.module('orledor')
-	.controller('questionnaire3Controller', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
+	.controller('questionnaire3Controller', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade) {
 		
 		
 		var userName = $stateParams.userName;
+		var researchName = $stateParams.researchName;
+
 
 		firebase.child('users').child(userName).once('value')
         .then(function(user) {
@@ -12,18 +14,19 @@ angular.module('orledor')
                 $scope.$apply();
         });
 
+		firebase.child('researches').child(researchName).once('value')
+        .then(function(research) {
+			$scope.researchName = research.child("_researchName").val();
+        })
+        .then(function() {
+                $scope.$apply();
+        });
 
 //------------------------------------------------------------------------------
-		// grade
-		// .then(function (res) {
-		// 	$scope.grade = res;
-		// })
-
-			
-		// statusOfPhysicians
-		// .then(function (res) {
-		// 	$scope.statusOfPhysicians = res;
-		// })
+		grade
+		.then(function (res) {
+			$scope.grade = res;
+		})
 
 
 		$scope.questionnaire3 = function (ev) {

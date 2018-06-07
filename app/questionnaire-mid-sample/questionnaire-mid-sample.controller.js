@@ -1,7 +1,8 @@
 angular.module('orledor')
-	.controller('questionnaireMidSampleController', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade, statusOfPhysicians) {
+	.controller('questionnaireMidSampleController', function ($scope, $state, $stateParams, $mdDialog, $q, $http, firebase, loggedUser, grade, mediaWatched) {
 		
 		var userName = $stateParams.userName;
+		var researchName = $stateParams.researchName;
 
 		firebase.child('users').child(userName).once('value')
         .then(function(user) {
@@ -9,20 +10,29 @@ angular.module('orledor')
         })
         .then(function() {
                 $scope.$apply();
+		});
+		
+
+		firebase.child('researches').child(researchName).once('value')
+        .then(function(research) {
+			$scope.researchName = research.child("_researchName").val();
+        })
+        .then(function() {
+                $scope.$apply();
         });
 
 
 //------------------------------------------------------------------------------
-		// grade
-		// .then(function (res) {
-		// 	$scope.grade = res;
-		// })
+		grade
+		.then(function (res) {
+			$scope.grade = res;
+		})
 
 			
-		// statusOfPhysicians
-		// .then(function (res) {
-		// 	$scope.statusOfPhysicians = res;
-		// })
+		mediaWatched
+		.then(function (res) {
+			$scope.mediaWatched = res;
+		})
 
 
 
@@ -39,7 +49,7 @@ angular.module('orledor')
 					return $q.reject();
 				})
 				.then(function () {
-					$scope.user._birthDate = $scope.selectedBirthDate.toISOString();
+					// $scope.user._birthDate = $scope.selectedBirthDate.toISOString();
 
 					return firebase.child('users').child($scope.user._userName).set($scope.user);										
 				})
