@@ -128,7 +128,8 @@ angular.module('orledor').controller('selectedResearchController', function($sco
                     .then(function(user) {
                         $scope.userName = user.child("_firstName").val();
 
-                        if(clientDate >= mid_date)
+                        if(clientDate >= mid_date && user.child("userResearches")
+                        .child(name).child("questionnaireMidSample").val() == null)
                         {
                             alert("שים לב הגעת לאצמע תקופת המדגם ולכן עלייך למלא את 'טופס אמצע תקופת מדגם'. הנך מועבר לטופס.")
                             $state.go('questionnaire_mid_sample', {'userName': userName, 'researchName': name});
