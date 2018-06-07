@@ -11,7 +11,8 @@ angular.module('orledor').controller('selectedResearchController', function($sco
     $scope.userName = "(אנא בחר מטופל מתוך רשימת משתתפי המחקר)";
     
     var clientDate = new Date();
-    console.log(clientDate);
+    var  date  = new Date(clientDate).toDateString("dd-MM-yyyy");
+
 
     LoadSpecificResearch(name);
 
@@ -150,11 +151,25 @@ angular.module('orledor').controller('selectedResearchController', function($sco
                             }
                             else if(index > 0 && index < number)
                             {
-                                $state.go('questionnaire4', {'userName': userName, 'researchName': name});
+                                if(user.child("userResearches").child(name).child("questionnaire2").val() == null)
+                                {
+                                    alert("אין באפשרותך לקיים מפגש זה מאחר ולא מילאת את השאלון של המפגש הראשון");
+                                }
+                                else
+                                {
+                                    $state.go('questionnaire4', {'userName': userName, 'researchName': name});
+                                }
                             }
                             else
                             {
-                                $state.go('questionnaire5', {'userName': userName, 'researchName': name});
+                                if(user.child("userResearches").child(name).child("questionnaire4").val() == null)
+                                {
+                                    alert("אין באפשרותך לקיים מפגש זה מאחר ולא מילאת לפחות שאלון אחד מהמפגשים הקודמים");
+                                }
+                                else
+                                {
+                                    $state.go('questionnaire5', {'userName': userName, 'researchName': name});
+                                }
                             }
                             
                         }
