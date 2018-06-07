@@ -11,49 +11,50 @@
 		</label>
 
 
+
 		<md-input-container>
 			<label>למה אתה אוהב להיות כאן?</label>
-			<input ng-model="user._userName">			
+			<input ng-model="questionnaireMidSample._love">			
 		</md-input-container>
 
 		<md-input-container>
 			<label>מה התכנים האהובים עלייך ולמה?</label>
-			<input>
+			<input ng-model="questionnaireMidSample._media">
 		</md-input-container>
 
 		<md-input-container>
 				<label>האם תרצה להמשיך להגיע?</label>
-				<input>
+				<input ng-model="questionnaireMidSample._continue">
 		</md-input-container>
 
 		<md-input-container>
 			<label>האם הדייר הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים <br/ >בקבוצה לתוכן הנצפה?</label>
-			<input>
+			<input ng-model="questionnaireMidSample._interest_in_others_txt">
 		</md-input-container>
 
 		<md-input-container>
 			<label>האם היית רוצה לראות תכנים אחרים? אם כן, איזה?</label>
-			<input>
+			<input ng-model="questionnaireMidSample._other_media">
 		</md-input-container>
 
 		<md-input-container>
 			<label>שאלה נוספת (מלל חופשי)</label>
-			<input>
+			<input ng-model="questionnaireMidSample.another_question_1_txt">
 		</md-input-container>
 
 		<md-input-container>
-			<md-select ng-model="user._userName" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+			<md-select ng-model="questionnaireMidSample.another_question_1_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
 				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 			</md-select>
 		</md-input-container>
 
 		<md-input-container>
 			<label>שאלה נוספת (מלל חופשי)</label>
-			<input>
+			<input ng-model="questionnaireMidSample.another_question_2_txt">
 		</md-input-container>
 
 		<md-input-container>
-			<md-select ng-model="user._userName" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+			<md-select ng-model="questionnaireMidSample.another_question_2_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
 				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 			</md-select>
 		</md-input-container>
@@ -64,49 +65,49 @@
 		</label>
 	
 		<md-input-container>
-				<md-select ng-model="user._userName" placeholder="מופנם/מסוגר">
+				<md-select ng-model="questionnaireMidSample._introvert_num" placeholder="מופנם/מסוגר">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="user._firstName" placeholder="סקרן">
+				<md-select ng-model="questionnaireMidSample._curious_num" placeholder="סקרן">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 				
 		<md-input-container>
-				<md-select ng-model="user._lastName" placeholder="מתלהב">
+				<md-select ng-model="questionnaireMidSample._enthusiastic_num" placeholder="מתלהב">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="דברן">
+				<md-select ng-model="questionnaireMidSample._talker_num" placeholder="דברן">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 						
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="עייף/רדום">
+				<md-select ng-model="questionnaireMidSample._tired_num" placeholder="עייף/רדום">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 						
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="אדיש">
+				<md-select ng-model="questionnaireMidSample._apathetic_num" placeholder="אדיש">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 										
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
+				<md-select ng-model="questionnaireMidSample._personal_life_num" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 										
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="האם הקשיש הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים בקבוצה לתוכן הנצפה?">
+				<md-select ng-model="questionnaireMidSample._interest_in_others_num" placeholder="האם הקשיש הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים בקבוצה לתוכן הנצפה?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
@@ -119,18 +120,18 @@
 		
 		<md-input-container>
 			<label>איזה תכנים רואה הקשיש?</label>
-			<input>
+			<input ng-model="questionnaireMidSample._watched_media_txt">
 		</md-input-container>
 	
 		<md-input-container>
 			<label>התרשמות כללית</label>
-			<input>
+			<input ng-model="questionnaireMidSample._general_impression">
 		</md-input-container>
 
 
 		<md-input-container>
 			<label>האם הייתה תגובה רגשית כלשהי?</label>
-			<input>
+			<input ng-model="questionnaireMidSample._emotional_response_txt">
 			<md-tooltip class="tooltip-multiline" md-direction="left">תגובה מילולית (מתחיל לדבר, מדבר עם המסך/המדריך, מביע רצון מילולי/פיזי לראות תכנים וכו') <br/>
 				תגובה רגשית (בכי, חיוך, צחוק וכו')
 			</md-tooltip>
@@ -138,30 +139,30 @@
 
 		<md-input-container>
 				<label>האם הייתה תגובה פיזית כלשהי?</label>
-				<input>
+				<input ng-model="questionnaireMidSample._physical_reaction_txt">
 				<md-tooltip class="tooltip-multiline" md-direction="left">תגובה פיזית (רוקד, מוחא כפיים, מנסה להזיז איבר גוף שלא מזיז בדרך כלל, יצירת אינטימיות וכו')
 				</md-tooltip>
 		</md-input-container>
 		
 		<md-input-container>
 				<label>האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב באמצע תקופת המדגם?</label>
-				<input>
+				<input ng-model="questionnaireMidSample._physical_change_txt">
 		</md-input-container>
 
 		<md-input-container>
 				<label>האם יש שינוי במצב הרגשי שאיתו נכנס הקשיש לעומת המצב באמצע תקופת המדגם?</label>
-				<input>
+				<input ng-model="questionnaireMidSample._emotional_change_txt">
 		</md-input-container>
 
 		<md-input-container>
-			<md-select ng-model="user._medicalCondition" placeholder="איזה תכנים רואה הקשיש?">
+			<md-select ng-model="questionnaireMidSample._watched_media_num" placeholder="איזה תכנים רואה הקשיש?">
 				<md-option ng-value="media" ng-repeat="media in mediaWatched">{{ media }}</md-option>
 			</md-select>
 		</md-input-container>
 
 		<md-input-container>
 			<label>במידה ובחרת בסעיף ו' "אחר" אנא פרט במלל </label>
-			<input>
+			<input ng-model="questionnaireMidSample._other_detail_txt">
 		</md-input-container>
 
 		<label>
@@ -169,31 +170,31 @@
 		</label>
 	
 		<md-input-container>
-				<md-select ng-model="user._userName" placeholder="האם הייתה תגובה רגשית כלשהי?">
+				<md-select ng-model="questionnaireMidSample._emotional_response_num" placeholder="האם הייתה תגובה רגשית כלשהי?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="user._firstName" placeholder="האם הייתה תגובה פיזית כלשהי?">
+				<md-select ng-model="questionnaireMidSample._physical_reaction_num" placeholder="האם הייתה תגובה פיזית כלשהי?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 				
 		<md-input-container>
-				<md-select ng-model="user._lastName" placeholder="האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?">
+				<md-select ng-model="questionnaireMidSample._physical_change_num" placeholder="האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 		
 		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="האם בתום זמן הפעיולת הוא יוצא ברצון?">
+				<md-select ng-model="questionnaireMidSample._emotional_change_num" placeholder="האם בתום זמן הפעיולת הוא יוצא ברצון?">
 					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
 				</md-select>
 		</md-input-container>
 			
 
-		<md-button class="md-primary" ng-click="questionnaire4($event)">שלח</md-button>
+		<md-button class="md-primary" ng-click="questionnaireMidSample($event)">שלח</md-button>
 
 	</md-card>
 
