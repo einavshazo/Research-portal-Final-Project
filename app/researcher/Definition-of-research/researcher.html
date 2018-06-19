@@ -1,4 +1,5 @@
-<md-card class="definition-of-research" dir="rtl">    
+<md-card class="definition-of-research" dir="rtl"> 
+	<div class="photo"></div>   
 	<div layout="column" layout-align="center center">
 		<md-card layout="column" layout-padding>
 
@@ -37,8 +38,6 @@
 					למשל: "השפעה על התנהגות, השפעה על תזונה ועוד..."
 				</md-tooltip>
 			</md-input-container>
-
-		<!--	<label>התערבות</label> -->
 			
 			<md-input-container>
 				<md-select ng-model="research._algorithm" placeholder="בחירת אלגוריתם התאמה">
@@ -46,21 +45,6 @@
 				</md-select>
 			</md-input-container>
 
-		<!--		
-			<md-input-container>
-				<md-select ng-model="research._musicStyle" placeholder="סגנון מוסיקה" multiple="true">
-					<md-option ng-value="mStyle" ng-repeat="mStyle in musicStyle">{{ mStyle }}</md-option>
-				</md-select>
-			</md-input-container>
-
-
-			<md-input-container>
-				<md-select ng-model="research._countries" placeholder="ארץ לידה" >
-					<md-option ng-value="country" ng-repeat="country in countries">{{ country }}</md-option>
-				</md-select>
-			</md-input-container> 
-
-		-->
 
 			<md-datepicker timezoned-date ng-attr-timezone="{{jsTimeZone}}" ng-model="selectedStartDate" md-placeholder="תחילת המחקר"></md-datepicker>
 
@@ -69,7 +53,6 @@
 			
 
 			<md-button class="md-primary" ng-click="researcher($event)">בחירת משתתפים מרשימה קיימת</md-button>
-		<!--	<md-button class="md-primary" ng-click="register($event)">הוספת משתמש חדש</md-button> -->
 
 
 

@@ -1,10 +1,11 @@
-<md-card class="selected-research" dir="rtl" >    
+<md-card class="selected-research" dir="rtl" layout-padding>    
     
-    <h1>ברוך הבא לדף של המחקר "{{name}}", מספר מזהה - {{id}}</h1>
+    <div class="photo"></div>
+    
+    <h1>ברוך הבא לדף של המחקר: {{name}}, מספר מזהה - {{id}}</h1>
    
     <div ng-init="init()">
         <div ng-app="orledor" ng-controller="selectedResearchController">
-            
             
             <div ng-repeat="researches in researchDetails track by $index">
                 {{researches}}<br/>
@@ -32,13 +33,7 @@
                         </div>		
                     </div>
                 </md-list-item>	
-            </md-list> 
-
-
+            </md-list>
         </div>
     </div>
-    
-
-    
-
 </md-card>

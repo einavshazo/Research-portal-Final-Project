@@ -1,216 +1,223 @@
-<h1>שאלון טרום כניסה לחדר מחשבים עבור: {{userName}} במחקר "{{researchName}}"</h1>
+<h1>שאלון טרום כניסה לחדר מחשבים עבור: {{userName}} במחקר {{researchName}}</h1>
 
-<div layout="row" layout-align="center start">
-<div layout="column" layout-align="center start">
-	<md-card layout="column" layout-padding>
-			
-		<label>פרטים אישיים:</label>
+<div class="questionnaire">
 
-		<md-input-container>
-			<label>שם משתמש של הקשיש</label>
-			<input ng-model="questionnaire2._userName">
-		</md-input-container>
-
-		<md-input-container>
-			<label>שם מלא</label>
-			<input ng-model="questionnaire2._fullName">
-		</md-input-container>
-
-		<md-input-container>
-				<label>מחלקה</label>
-				<input ng-model="questionnaire2._department">
-		</md-input-container>
-
-		<md-input-container>
-			<label>שנת לידה</label>
-			<input ng-model="questionnaire2._yearOfBirth">
-		</md-input-container>
-
-		<label>מצב הגדרתי:</label>
-		<label> בכל אחד מהסעיפים הבאים <br/> כיצד היית מתאר במילים את מצב הקשיש?</label>
-
-		<md-input-container>
-			<label>רפואי - פיזי (סיעודי/עצמאי)</label>
-			<input ng-model="questionnaire2._Physically_txt">
-		</md-input-container>
-
-		<md-input-container>
-				<label>רפואי - נפשי (דמנטי)</label>
-				<input ng-model="questionnaire2._mental_txt">
-		</md-input-container>
-		
-		<md-input-container>
-				<label>קשר עם המשפחה</label>
-				<input ng-model="questionnaire2._family_relation_txt">
-		</md-input-container>
-
-		<md-input-container>
-			<label>קשר חברתי בבית האבות</label>
-			<input ng-model="questionnaire2._social_connection_txt">
-		</md-input-container>
-
-
-		<label> בכל אחד מהסעיפים הבאים <br/>אנא בחר ציון מספרי בין 1-5 <br/> (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</label>
-
-		<md-input-container>
-			<md-select ng-model="questionnaire2._Physically_num" placeholder="רפואי - פיזי (סיעודי/עצמאי)">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="questionnaire2._mental_num" placeholder="רפואי - נפשי (דמנטי)">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-		
-		<md-input-container>
-			<md-select ng-model="questionnaire2._family_relation_num" placeholder="קשר עם המשפחה">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="questionnaire2._social_connection_num" placeholder="קשר חברתי בבית האבות">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-
-		
-	</md-card>
-</div>
-
-	<div layout="column" layout-align="center start">
-		<md-card layout="column" layout-padding>
-
-			<label>אופי הקשיש:</label>
-			<label> בכל אחד מהסעיפים הבאים <br/> כיצד היית מתאר במילים את אופי הקשיש?</label>		
-		
-			<md-input-container>
-				<label>מופנם/מסוגר</label>
-				<input  ng-model="questionnaire2._introvert_txt">
-			</md-input-container>
-	
-			<md-input-container>
-					<label>סקרן</label>
-					<input ng-model="questionnaire2._curious_txt">
-			</md-input-container>
-			
-			<md-input-container>
-					<label>מתלהב</label>
-					<input ng-model="questionnaire2._enthusiastic_txt">
-			</md-input-container>
-
-			<md-input-container>
-					<label>דברן</label>
-					<input ng-model="questionnaire2._talker_txt">
-			</md-input-container>
-	
-			<md-input-container>
-				<label>עייף/רדום</label>
-				<input ng-model="questionnaire2._tired_txt">
-			</md-input-container>
-
-			<md-input-container>
-				<label>אדיש</label>
-				<input ng-model="questionnaire2._apathetic_txt">
-			</md-input-container>
-	
-			<md-input-container>
-				<label>משתף על חייו האישיים/ <br/> רגשות/היסטוריה שלו/משתף באופן כללי</label>
-				<input ng-model="questionnaire2._personal_life_txt">
-			</md-input-container>
-	
-			<md-input-container>
-					<label>שיתוף פעולה בפעילויות השונות <br/> בבית האבות</label>
-					<input ng-model="questionnaire2._activities_txt">
-			</md-input-container>
+		<div layout="row" layout-align="center start">
+				<div layout="column" layout-align="center start">
+					<md-card layout="column" layout-padding>
+							
+						<label>פרטים אישיים:</label>
 				
-			<md-input-container>
-					<label>שיתוף פעולה בזמן האוכל</label>
-					<input ng-model="questionnaire2._food_txt">
-			</md-input-container>
-
-			<md-input-container>
-					<label>שיתוף פעולה בזמן הכנה לשינה</label>
-					<input ng-model="questionnaire2._sleep_txt">
-			</md-input-container>
-
-
-		</md-card>
-	</div>
-
-
-	<div layout="column" layout-align="center start">
-			<md-card layout="column" layout-padding>
-					
-				<label>אופי הקשיש:</label>
-				<label> בכל אחד מהסעיפים הבאים <br/>אנא בחר ציון מספרי בין 1-5 <br/> (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</label>
-			
-				<md-input-container>
-						<md-select ng-model="questionnaire2._introvert_num" placeholder="מופנם/מסוגר">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+						<md-input-container>
+							<label>שם משתמש של הקשיש</label>
+							<input ng-model="questionnaire2._userName">
+						</md-input-container>
 				
-				<md-input-container>
-						<md-select ng-model="questionnaire2._curious_num" placeholder="סקרן">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+						<md-input-container>
+							<label>שם מלא</label>
+							<input ng-model="questionnaire2._fullName">
+						</md-input-container>
+				
+						<md-input-container>
+								<label>מחלקה</label>
+								<input ng-model="questionnaire2._department">
+						</md-input-container>
+				
+						<md-input-container>
+							<label>שנת לידה</label>
+							<input ng-model="questionnaire2._yearOfBirth">
+						</md-input-container>
+				
+						<label>מצב הגדרתי:</label>
+						<label> בכל אחד מהסעיפים הבאים <br/> כיצד היית מתאר במילים את מצב הקשיש?</label>
+				
+						<md-input-container>
+							<label>רפואי - פיזי (סיעודי/עצמאי)</label>
+							<input ng-model="questionnaire2._Physically_txt">
+						</md-input-container>
+				
+						<md-input-container>
+								<label>רפואי - נפשי (דמנטי)</label>
+								<input ng-model="questionnaire2._mental_txt">
+						</md-input-container>
 						
-				<md-input-container>
-						<md-select ng-model="questionnaire2._enthusiastic_num" placeholder="מתלהב">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+						<md-input-container>
+								<label>קשר עם המשפחה</label>
+								<input ng-model="questionnaire2._family_relation_txt">
+						</md-input-container>
 				
-				<md-input-container>
-						<md-select ng-model="questionnaire2._talker_num" placeholder="דברן">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+						<md-input-container>
+							<label>קשר חברתי בבית האבות</label>
+							<input ng-model="questionnaire2._social_connection_txt">
+						</md-input-container>
+				
+				
+						<label> בכל אחד מהסעיפים הבאים <br/>אנא בחר ציון מספרי בין 1-5 <br/> (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</label>
+				
+						<md-input-container>
+							<md-select ng-model="questionnaire2._Physically_num" placeholder="רפואי - פיזי (סיעודי/עצמאי)">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="questionnaire2._mental_num" placeholder="רפואי - נפשי (דמנטי)">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+						
+						<md-input-container>
+							<md-select ng-model="questionnaire2._family_relation_num" placeholder="קשר עם המשפחה">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="questionnaire2._social_connection_num" placeholder="קשר חברתי בבית האבות">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+				
+						
+					</md-card>
+				</div>
+				
+					<div layout="column" layout-align="center start">
+						<md-card layout="column" layout-padding>
+				
+							<label>אופי הקשיש:</label>
+							<label> בכל אחד מהסעיפים הבאים <br/> כיצד היית מתאר במילים את אופי הקשיש?</label>		
+						
+							<md-input-container>
+								<label>מופנם/מסוגר</label>
+								<input  ng-model="questionnaire2._introvert_txt">
+							</md-input-container>
+					
+							<md-input-container>
+									<label>סקרן</label>
+									<input ng-model="questionnaire2._curious_txt">
+							</md-input-container>
+							
+							<md-input-container>
+									<label>מתלהב</label>
+									<input ng-model="questionnaire2._enthusiastic_txt">
+							</md-input-container>
+				
+							<md-input-container>
+									<label>דברן</label>
+									<input ng-model="questionnaire2._talker_txt">
+							</md-input-container>
+					
+							<md-input-container>
+								<label>עייף/רדום</label>
+								<input ng-model="questionnaire2._tired_txt">
+							</md-input-container>
+				
+							<md-input-container>
+								<label>אדיש</label>
+								<input ng-model="questionnaire2._apathetic_txt">
+							</md-input-container>
+					
+							<md-input-container>
+								<label>משתף על חייו האישיים/ <br/> רגשות/היסטוריה שלו/<br/>משתף באופן כללי</label>
+								<input ng-model="questionnaire2._personal_life_txt">
+							</md-input-container>
+					
+							<md-input-container>
+									<label>שיתוף פעולה בפעילויות השונות <br/> בבית האבות</label>
+									<input ng-model="questionnaire2._activities_txt">
+							</md-input-container>
 								
-				<md-input-container>
-						<md-select ng-model="questionnaire2._tired_num" placeholder="עייף/רדום">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+							<md-input-container>
+									<label>שיתוף פעולה בזמן האוכל</label>
+									<input ng-model="questionnaire2._food_txt">
+							</md-input-container>
+				
+							<md-input-container>
+									<label>שיתוף פעולה בזמן<br/> הכנה לשינה</label>
+									<input ng-model="questionnaire2._sleep_txt">
+							</md-input-container>
+				
+				
+						</md-card>
+					</div>
+				
+				
+					<div layout="column" layout-align="center start">
+							<md-card layout="column" layout-padding>
+									
+								<label>אופי הקשיש:</label>
+								<label> בכל אחד מהסעיפים הבאים <br/>אנא בחר ציון מספרי בין 1-5 <br/> (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</label>
+							
+								<md-input-container>
+										<md-select ng-model="questionnaire2._introvert_num" placeholder="מופנם/מסוגר">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
 								
-				<md-input-container>
-						<md-select ng-model="questionnaire2._apathetic_num" placeholder="אדיש">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+								<md-input-container>
+										<md-select ng-model="questionnaire2._curious_num" placeholder="סקרן">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+										
+								<md-input-container>
+										<md-select ng-model="questionnaire2._enthusiastic_num" placeholder="מתלהב">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+								
+								<md-input-container>
+										<md-select ng-model="questionnaire2._talker_num" placeholder="דברן">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
 												
-				<md-input-container>
-						<md-select ng-model="questionnaire2._personal_life_num" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
+								<md-input-container>
+										<md-select ng-model="questionnaire2._tired_num" placeholder="עייף/רדום">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
 												
-				<md-input-container>
-						<md-select ng-model="questionnaire2._activities_num" placeholder="שיתוף פעולה בפעילויות השונות בבית האבות">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
-
-				<md-input-container>
-						<md-select ng-model="questionnaire2._food_num" placeholder="שיתוף פעולה בזמן האוכל">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
-												
-				<md-input-container>
-						<md-select ng-model="questionnaire2._sleep_num" placeholder="שיתוף פעולה בזמן הכנה לשינה">
-							<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-						</md-select>
-				</md-input-container>
-
-
-				<md-button class="md-primary" ng-click="questionnaire2($event)">שלח</md-button>
-			</md-card>
-		</div>
+								<md-input-container>
+										<md-select ng-model="questionnaire2._apathetic_num" placeholder="אדיש">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+																
+								<md-input-container>
+										<md-select ng-model="questionnaire2._personal_life_num" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+																
+								<md-input-container>
+										<md-select ng-model="questionnaire2._activities_num" placeholder="שיתוף פעולה בפעילויות השונות בבית האבות">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+				
+								<md-input-container>
+										<md-select ng-model="questionnaire2._food_num" placeholder="שיתוף פעולה בזמן האוכל">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+																
+								<md-input-container>
+										<md-select ng-model="questionnaire2._sleep_num" placeholder="שיתוף פעולה בזמן הכנה לשינה">
+											<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+										</md-select>
+								</md-input-container>
+				
+				
+								<md-button class="md-primary" ng-click="questionnaire2($event)">שלח</md-button>
+							</md-card>
+						</div>
+				
+				</div>
 
 </div>
+
+
+

@@ -1,200 +1,204 @@
-<h1>שאלון סוף תקופת המדגם עבור: {{userName}} במחקר "{{researchName}}"</h1>
-
-<div layout="row" layout-align="center start">
-<div layout="column" layout-align="center start">
-	<md-card layout="column" layout-padding>
-		
-		<label>
-		<!-- <h2>שאלות לקשיש בסוף תקופת המדגם:</h2> -->
-		<h4> אנא פרט במלל כל תשובה רלוונטית שעלייה המשתתף ענה</h4>
-		<h6> הערה: השאלות שנשאלות הן על-מנת לדובב את המשתתף כדי לספק חומר גלם להבנה על השינוי ולכמת את השפעת המוסיקה המותאמת על הקשיש</h6>
-		</label>
-
-
-		<md-input-container>
-			<label>למה אתה אוהב להיות כאן?</label>
-			<input ng-model="questionnaire5._love">			
-		</md-input-container>
-
-		<md-input-container>
-			<label>מה התכנים האהובים עלייך ולמה?</label>
-			<input ng-model="questionnaire5._media">			
-		</md-input-container>
-
-		<md-input-container>
-			<label>האם תרצה להמשיך להגיע?</label>
-			<input ng-model="questionnaire5._continue">			
-		</md-input-container>
-
-		<md-input-container>
-			<label>האם הדייר הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים <br/ >בקבוצה לתוכן הנצפה?</label>
-			<input ng-model="questionnaire5._interest_in_others_txt">			
-		</md-input-container>
-
-		<md-input-container>
-			<label>האם היית רוצה לראות תכנים אחרים? אם כן, איזה?</label>
-			<input ng-model="questionnaire5._other_media">			
-		</md-input-container>
-
-		<md-input-container>
-			<label>שאלה נוספת (מלל חופשי)</label>
-			<input ng-model="questionnaire5.another_question_1_txt">			
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="questionnaire5.another_question_1_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>שאלה נוספת (מלל חופשי)</label>
-			<input ng-model="questionnaire5.another_question_2_txt">			
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="questionnaire5.another_question_2_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<label>
-			<h2>השפעת מוסיקה מותאמת אישית על אופי הקשיש:</h2>
-			<h4>בכל אחד מהסעיפים הבאים אנא בחר ציון מספרי בין 1-5 (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</h4>
-		</label>
-	
-		<md-input-container>
-				<md-select ng-model="questionnaire5._introvert_num" placeholder="מופנם/מסוגר">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-		
-		<md-input-container>
-				<md-select ng-model="questionnaire5._curious_num" placeholder="סקרן">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-				
-		<md-input-container>
-				<md-select ng-model="questionnaire5._enthusiastic_num" placeholder="מתלהב">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-		
-		<md-input-container>
-				<md-select ng-model="questionnaire5._talker_num" placeholder="דברן">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
+<h1>שאלון סוף תקופת המדגם עבור: {{userName}} במחקר {{researchName}}</h1>
+<div class="questionnaire">
+		<div layout="row" layout-align="center start">
+				<div layout="column" layout-align="center start">
+					<md-card layout="column" layout-padding>
 						
-		<md-input-container>
-				<md-select ng-model="questionnaire5._tired_num" placeholder="עייף/רדום">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-						
-		<md-input-container>
-				<md-select ng-model="questionnaire5._apathetic_num" placeholder="אדיש">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-										
-		<md-input-container>
-				<md-select ng-model="questionnaire5._personal_life_num" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-										
-		<md-input-container>
-				<md-select ng-model="questionnaire5._interest_in_others_num" placeholder="האם הקשיש הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים בקבוצה לתוכן הנצפה?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-
-		<label>
-				<h2>אבחנה של החוקר</h2>
-				<h4>אנא פרט במלל את התגובה של הקשיש</h4>
-		</label>
-
-		
-		<md-input-container>
-			<label>איזה תכנים רואה הקשיש?</label>
-			<input ng-model="questionnaire5._watched_media_txt">			
-		</md-input-container>
-	
-		<md-input-container>
-			<label>התרשמות כללית</label>
-			<input ng-model="questionnaire5._general_impression">			
-		</md-input-container>
-
-
-		<md-input-container>
-			<label>האם הייתה תגובה רגשית כלשהי?</label>
-			<input ng-model="questionnaire5._emotional_response_txt">			
-			<md-tooltip class="tooltip-multiline" md-direction="left">תגובה מילולית (מתחיל לדבר, מדבר עם המסך/המדריך, מביע רצון מילולי/פיזי לראות תכנים וכו') <br/>
-				תגובה רגשית (בכי, חיוך, צחוק וכו')
-			</md-tooltip>
-		</md-input-container>
-
-		<md-input-container>
-			<label>האם הייתה תגובה פיזית כלשהי?</label>
-			<input ng-model="questionnaire5._physical_reaction_txt">			
-			<md-tooltip class="tooltip-multiline" md-direction="left">תגובה פיזית (רוקד, מוחא כפיים, מנסה להזיז איבר גוף שלא מזיז בדרך כלל, יצירת אינטימיות וכו')
-			</md-tooltip>
-		</md-input-container>
-		
-		<md-input-container>
-			<label>האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בתום תקופת המדגם?</label>
-			<input ng-model="questionnaire5._physical_change_txt">			
-		</md-input-container>
-
-		<md-input-container>
-			<label>האם יש שינוי במצב הרגשי שאיתו נכנס הקשיש לעומת המצב בתום תקופת המדגם?</label>
-			<input ng-model="questionnaire5._emotional_change_txt">			
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="questionnaire5._watched_media_num" placeholder="איזה תכנים רואה הקשיש?">
-				<md-option ng-value="media" ng-repeat="media in mediaWatched">{{ media }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>במידה ובחרת בסעיף ו' "אחר" אנא פרט במלל </label>
-			<input ng-model="questionnaire5._other_detail_txt">			
-		</md-input-container>
-
-		<label>
-			<h4>בכל אחד מהסעיפים הבאים אנא בחר ציון מספרי בין 1-5 (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</h4>
-		</label>
-	
-		<md-input-container>
-				<md-select ng-model="questionnaire5._emotional_response_num" placeholder="האם הייתה תגובה רגשית כלשהי?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-		
-		<md-input-container>
-				<md-select ng-model="questionnaire5._physical_reaction_num" placeholder="האם הייתה תגובה פיזית כלשהי?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
+						<label>
+						<!-- <h2>שאלות לקשיש בסוף תקופת המדגם:</h2> -->
+						<h4> אנא פרט במלל כל תשובה רלוונטית שעלייה המשתתף ענה</h4>
+						<h6> הערה: השאלות שנשאלות הן על-מנת לדובב את המשתתף כדי לספק חומר גלם להבנה על השינוי ולכמת את השפעת המוסיקה המותאמת על הקשיש</h6>
+						</label>
 				
-		<md-input-container>
-				<md-select ng-model="questionnaire5._physical_change_num" placeholder="האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-		
-		<md-input-container>
-				<md-select ng-model="questionnaire5._emotional_change_num" placeholder="האם בתום זמן הפעיולת הוא יוצא ברצון?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-			
-
-		<md-button class="md-primary" ng-click="questionnaire5($event)">שלח</md-button>
-
-	</md-card>
+				
+						<md-input-container>
+							<label>למה אתה אוהב להיות כאן?</label>
+							<input ng-model="questionnaire5._love">			
+						</md-input-container>
+				
+						<md-input-container>
+							<label>מה התכנים האהובים עלייך ולמה?</label>
+							<input ng-model="questionnaire5._media">			
+						</md-input-container>
+				
+						<md-input-container>
+							<label>האם תרצה להמשיך להגיע?</label>
+							<input ng-model="questionnaire5._continue">			
+						</md-input-container>
+				
+						<md-input-container>
+							<label>האם הדייר הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים <br/ >בקבוצה לתוכן הנצפה?</label>
+							<input ng-model="questionnaire5._interest_in_others_txt">			
+						</md-input-container>
+				
+						<md-input-container>
+							<label>האם היית רוצה לראות תכנים אחרים? אם כן, איזה?</label>
+							<input ng-model="questionnaire5._other_media">			
+						</md-input-container>
+				
+						<md-input-container>
+							<label>שאלה נוספת (מלל חופשי)</label>
+							<input ng-model="questionnaire5.another_question_1_txt">			
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="questionnaire5.another_question_1_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>שאלה נוספת (מלל חופשי)</label>
+							<input ng-model="questionnaire5.another_question_2_txt">			
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="questionnaire5.another_question_2_num" placeholder="במדיה והוספת שאלה בבקשה דרג את תשובתך גם בציון מ 1 עד 5">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<label>
+							<h2>השפעת מוסיקה מותאמת אישית על אופי הקשיש:</h2>
+							<h4>בכל אחד מהסעיפים הבאים אנא בחר ציון מספרי בין 1-5 (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</h4>
+						</label>
+					
+						<md-input-container>
+								<md-select ng-model="questionnaire5._introvert_num" placeholder="מופנם/מסוגר">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+						
+						<md-input-container>
+								<md-select ng-model="questionnaire5._curious_num" placeholder="סקרן">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+								
+						<md-input-container>
+								<md-select ng-model="questionnaire5._enthusiastic_num" placeholder="מתלהב">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+						
+						<md-input-container>
+								<md-select ng-model="questionnaire5._talker_num" placeholder="דברן">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+										
+						<md-input-container>
+								<md-select ng-model="questionnaire5._tired_num" placeholder="עייף/רדום">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+										
+						<md-input-container>
+								<md-select ng-model="questionnaire5._apathetic_num" placeholder="אדיש">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+														
+						<md-input-container>
+								<md-select ng-model="questionnaire5._personal_life_num" placeholder="משתף על חייו האישיים/רגשות/היסטוריה שלו/משתף באופן כללי">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+														
+						<md-input-container>
+								<md-select ng-model="questionnaire5._interest_in_others_num" placeholder="האם הקשיש הביע עניין בתכנים של משתתפים אחרים או בתגובות של משתתפים אחרים בקבוצה לתוכן הנצפה?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+				
+						<label>
+								<h2>אבחנה של החוקר</h2>
+								<h4>אנא פרט במלל את התגובה של הקשיש</h4>
+						</label>
+				
+						
+						<md-input-container>
+							<label>איזה תכנים רואה הקשיש?</label>
+							<input ng-model="questionnaire5._watched_media_txt">			
+						</md-input-container>
+					
+						<md-input-container>
+							<label>התרשמות כללית</label>
+							<input ng-model="questionnaire5._general_impression">			
+						</md-input-container>
+				
+				
+						<md-input-container>
+							<label>האם הייתה תגובה רגשית כלשהי?</label>
+							<input ng-model="questionnaire5._emotional_response_txt">			
+							<md-tooltip class="tooltip-multiline" md-direction="left">תגובה מילולית (מתחיל לדבר, מדבר עם המסך/המדריך, מביע רצון מילולי/פיזי לראות תכנים וכו') <br/>
+								תגובה רגשית (בכי, חיוך, צחוק וכו')
+							</md-tooltip>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>האם הייתה תגובה פיזית כלשהי?</label>
+							<input ng-model="questionnaire5._physical_reaction_txt">			
+							<md-tooltip class="tooltip-multiline" md-direction="left">תגובה פיזית (רוקד, מוחא כפיים, מנסה להזיז איבר גוף שלא מזיז בדרך כלל, יצירת אינטימיות וכו')
+							</md-tooltip>
+						</md-input-container>
+						
+						<md-input-container>
+							<label>האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בתום תקופת המדגם?</label>
+							<input ng-model="questionnaire5._physical_change_txt">			
+						</md-input-container>
+				
+						<md-input-container>
+							<label>האם יש שינוי במצב הרגשי שאיתו נכנס הקשיש לעומת המצב בתום תקופת המדגם?</label>
+							<input ng-model="questionnaire5._emotional_change_txt">			
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="questionnaire5._watched_media_num" placeholder="איזה תכנים רואה הקשיש?">
+								<md-option ng-value="media" ng-repeat="media in mediaWatched">{{ media }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>במידה ובחרת בסעיף ו' "אחר" אנא פרט במלל </label>
+							<input ng-model="questionnaire5._other_detail_txt">			
+						</md-input-container>
+				
+						<label>
+							<h4>בכל אחד מהסעיפים הבאים אנא בחר ציון מספרי בין 1-5 (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</h4>
+						</label>
+					
+						<md-input-container>
+								<md-select ng-model="questionnaire5._emotional_response_num" placeholder="האם הייתה תגובה רגשית כלשהי?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+						
+						<md-input-container>
+								<md-select ng-model="questionnaire5._physical_reaction_num" placeholder="האם הייתה תגובה פיזית כלשהי?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+								
+						<md-input-container>
+								<md-select ng-model="questionnaire5._physical_change_num" placeholder="האם יש שינוי במצב הפיזי שאיתו נכנס הקשיש לעומת המצב בסוף הפגישה?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+						
+						<md-input-container>
+								<md-select ng-model="questionnaire5._emotional_change_num" placeholder="האם בתום זמן הפעיולת הוא יוצא ברצון?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+							
+				
+						<md-button class="md-primary" ng-click="questionnaire5($event)">שלח</md-button>
+				
+					</md-card>
+				
+				</div>
 
 </div>
+
+

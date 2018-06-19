@@ -1,119 +1,124 @@
-<div layout="row" layout-align="center start">
-<div layout="column" layout-align="center start">
-	<md-card layout="column" layout-padding>
-		
-		<label>
-		<h2>שאלות לצוות הרפואי והתעסוקתי בידי החוקר:</h2>
-		<h4> אחראי תעסוקה - אחראיים להעביר לדיירים את משך היום ונמצאים איתם במגע יומיומי. עובדים סוציאליים, דיאטנית.</h4>
-		</label>
+<div class="questionnaire">
 
-		<label>
-			<h5>בכל אחד מהסעיפים הבאים אנא בחר ציון מספרי בין 1-5 (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</h5>
-		</label>
-	
-		<md-input-container>
-				<md-select ng-model="user._userName" placeholder="האם השתנה משהו בדינמיקה המשפחתית?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-		
-		<md-input-container>
-				<md-select ng-model="user._firstName" placeholder="האם השתנה משהו בדינמיקה החברתית?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
+		<div layout="row" layout-align="center start">
+				<div layout="column" layout-align="center start">
+					<md-card layout="column" layout-padding>
+						
+						<label>
+						<h2>שאלות לצוות הרפואי והתעסוקתי בידי החוקר:</h2>
+						<h4> אחראי תעסוקה - אחראיים להעביר לדיירים את משך היום ונמצאים איתם במגע יומיומי. עובדים סוציאליים, דיאטנית.</h4>
+						</label>
 				
-		<md-input-container>
-				<md-select ng-model="user._lastName" placeholder="האם יש שינוי בתיאבון?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-		
-		<md-input-container>
-				<md-select ng-model="research._algorithm" placeholder="האם הדייר משתף/נפתח ורוצה לספר דברים?">
-					<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-				</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="research._algorithm" placeholder="האם הוא מזכיר את חדר המחשבים?/מבקש לבוא?">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="research._algorithm" placeholder="האם הוא מספר חוויות מחדר המחשבים? (מספר מרצונו או כששואלים אותו?)">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="research._algorithm" placeholder="איזה רגש הדייר מבטא כשאומרים לו שלוקחים אותו לחדר מחשבים?">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-
-		<md-input-container>
-			<md-select ng-model="research._algorithm" placeholder="האם בתום זמן הפעילות הוא יוצא ברצון?">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-
-
-		<md-input-container>
-			<md-select ng-model="research._algorithm" placeholder="האם הוא מתדמיד/יוזם את המפגש?">
-				<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container>
-			<label>פירוט:</label>
-			<input>
-		</md-input-container>
-
-		
-		<md-button class="md-primary" ng-click="questionnaire10($event)">שלח</md-button>
-
-	</md-card>
-
+						<label>
+							<h5>בכל אחד מהסעיפים הבאים אנא בחר ציון מספרי בין 1-5 (כאשר 1 ירוד מאוד ו-5 טוב מאוד)</h5>
+						</label>
+					
+						<md-input-container>
+								<md-select ng-model="user._userName" placeholder="האם השתנה משהו בדינמיקה המשפחתית?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+						
+						<md-input-container>
+								<md-select ng-model="user._firstName" placeholder="האם השתנה משהו בדינמיקה החברתית?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+								
+						<md-input-container>
+								<md-select ng-model="user._lastName" placeholder="האם יש שינוי בתיאבון?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+						
+						<md-input-container>
+								<md-select ng-model="research._algorithm" placeholder="האם הדייר משתף/נפתח ורוצה לספר דברים?">
+									<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+								</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="research._algorithm" placeholder="האם הוא מזכיר את חדר המחשבים?/מבקש לבוא?">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="research._algorithm" placeholder="האם הוא מספר חוויות מחדר המחשבים? (מספר מרצונו או כששואלים אותו?)">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="research._algorithm" placeholder="איזה רגש הדייר מבטא כשאומרים לו שלוקחים אותו לחדר מחשבים?">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+				
+						<md-input-container>
+							<md-select ng-model="research._algorithm" placeholder="האם בתום זמן הפעילות הוא יוצא ברצון?">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+				
+				
+						<md-input-container>
+							<md-select ng-model="research._algorithm" placeholder="האם הוא מתדמיד/יוזם את המפגש?">
+								<md-option ng-value="grade" ng-repeat="grade in grade">{{ grade }}</md-option>
+							</md-select>
+						</md-input-container>
+				
+						<md-input-container>
+							<label>פירוט:</label>
+							<input>
+						</md-input-container>
+				
+						
+						<md-button class="md-primary" ng-click="questionnaire10($event)">שלח</md-button>
+				
+					</md-card>
+				
+				</div>
+	
 </div>
+

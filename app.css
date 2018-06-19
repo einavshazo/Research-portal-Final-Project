@@ -6,15 +6,21 @@
     right:15px;
     font-style:
         italic;
-    font-size:20px
+    font-size:20px;
 }
 
 .shell-header 
 .header-hello-user 
 .logout
 {
-    cursor:pointer
+    cursor:pointer  
 }
+
+.shell-header
+{
+    background-color: #323f4f !important;
+}
+
 
 .client-shell-menu a
 {
@@ -62,6 +68,15 @@
 }
 
 
+.researcher-home-page
+{
+    background-image: url(../resources/pic1.jpg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: contain; 
+
+}
+
 
 .researcher-home-page md-card-title md-card-title-text h1
 {
@@ -72,6 +87,7 @@
     letter-spacing:-1px;
     line-height:1;
     text-align:center
+    
 }
 
 .researcher-home-page md-card-content p
@@ -83,6 +99,105 @@
 }
 
 
+.definition-of-research
+{
+    position: relative;
+    z-index: 1;
+
+    font-size: 20px;
+    font-style: normal;
+
+}
+
+.definition-of-research .photo
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../resources/pic3.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    opacity: 0.5;
+ 
+}
+
+.researches-list
+{
+    background-image: url(../resources/pic1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+
+.selected-research
+{
+    position: relative;
+    z-index: 1;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    
+}
+
+.selected-research .photo
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../resources/research.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    opacity: 0.3;
+ 
+}
+
+
+
+.login
+{
+    background-image: url(../resources/login.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    height: 100vh;
+}
+
+
+.login-card
+{
+    font-size: 25px;
+    font-style: normal;
+    font-weight: bold;  
+    height: 50vh;
+    width: 40vw;
+    opacity: 0.8;  
+
+}
+
+
+
+.md-primary
+{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold; 
+}
+
+ 
+.questionnaire
+{
+    font-size: 25px
+}
 
 .media-suggestion 
 .media-info
