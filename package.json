@@ -20,13 +20,9 @@
     "lodash": "^4.15.0",
     "md-date-range-picker": "^0.8.3",
     "mdi": "^1.6.50",
-    "multiple-date-picker": "^2.1.6",
-    "webpack": "^4.12.0",
-    "webpack-dev-server": "^3.1.4"
+    "multiple-date-picker": "^2.1.6"
   },
-  "devDependencies": {
-    "webpack-cli": "^3.0.8"
-  },
+  "devDependencies": {},
   "scripts": {
     "build:production": "node --version",
     "test": "echo \"Error: no test specified\" && exit 1",
